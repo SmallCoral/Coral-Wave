@@ -1,0 +1,24 @@
+{
+  "Name": "Coral-Wave",
+  "Target": "ATSAMD21E18A",
+  "Feature": "USB UAC1 transport",
+  "SampleRate": 48000,
+  "Bits": 16,
+  "PlaybackChannels": 2,
+  "CaptureChannels": 1,
+  "FlashAddress": "0x00000000",
+  "Toolchain": "Arm GNU 14.3.Rel1",
+  "TinyUSB": "0.21.0 with SAMD ISO hooks",
+  "Artifacts": [
+    {
+      "File": "Coral-Wave-USB.bin",
+      "Bytes": 9980,
+      "SHA256": "b871f0eb5fcc254f98810fd8c8c6a3704b9b66c77fce057b068456677bba0330"
+    },
+    {
+      "File": "Coral-Wave-USB.hex",
+      "Bytes": 28119,
+      "SHA256": "94e45b612c9fbced4c46230d562b91d6bf3029b4b4c53e66a21885db6dc19eb6"
+    }
+  ]
+}

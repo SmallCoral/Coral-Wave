@@ -1,0 +1,35 @@
+{
+  "Mode": "Control",
+  "Transport": "Hardware",
+  "CodecClock": "Pll12",
+  "Stage": 7,
+  "ErrorCode": 0,
+  "Error": "none",
+  "DeviceId": "0x1001030A",
+  "BusIdle": 3,
+  "LastAckMask": 7,
+  "SuccessfulWrites": 35,
+  "FailedRegister": "0xFFFFFFFF",
+  "ApproximateLrclkHz": 0,
+  "BclkTransitionsObserved": 0,
+  "RxWords": 0,
+  "AdcMin": [
+    0,
+    0
+  ],
+  "AdcMax": [
+    0,
+    0
+  ],
+  "TxUnderruns": 0,
+  "RxOverruns": 0,
+  "DmaBlocks": 0,
+  "ElapsedMs": 864,
+  "Done": 1,
+  "AddressAckCount": 1,
+  "RespondingAddresses": [
+    "0x1A"
+  ],
+  "GpioDriveCheck": 15,
+  "Log": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\wm8978\\firmware\\wm8978-selftest\\build\\control-hardware-pll12-20261014-212219.log"
+}

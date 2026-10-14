@@ -1,0 +1,11 @@
+r
+h
+loadbin "C:\Users\sc\Documents\Dev\Hardware\wm8978\firmware\wm8978-selftest\build\control.bin", 0x20000000
+wreg MSP, 0x20008000
+SetPC 0x20000328
+g
+sleep 2500
+h
+mem32 0x20007000, 0x20
+mem32 0x60000000, 10
+q

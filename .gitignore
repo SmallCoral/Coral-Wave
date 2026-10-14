@@ -1,6 +1,7 @@
 # Local history and generated build output
-pcb/.history/
-code/build/
+Hardware/.history/
+Firmware/**/build/
+Firmware/selftest/deps/
 .work/
 
 # KiCad local state, locks, and backups
@@ -17,8 +18,11 @@ code/build/
 *.hex
 *.bin
 *.map
+!Firmware/releases/*.bin
+!Firmware/releases/*.hex
 
 # Editor and operating-system metadata
 .DS_Store
 Thumbs.db
 *~
+__pycache__/

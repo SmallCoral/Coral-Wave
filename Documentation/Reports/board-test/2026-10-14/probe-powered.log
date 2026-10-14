@@ -1,0 +1,26 @@
+SEGGER J-Link Commander V9.82 (Compiled Sep 30 2026 12:54:00)
+DLL version V9.82, compiled Sep 30 2026 12:52:58
+
+J-Link Commander will now exit on Error
+
+J-Link Command File read successfully.
+Processing script file...
+J-Link>connect
+J-Link connection not established yet but required for command.
+Connecting to J-Link ...O.K.
+Firmware: J-Link V9 compiled Dec 13 2022 11:14:50
+Hardware version: V9.70
+J-Link uptime (since boot): N/A (Not supported by this model)
+S/N: 69730331
+License(s): RDI,FlashBP,FlashDL,JFlash,GDB
+VTref=0.125V
+Device "ATSAMD21E18A" selected.
+
+
+Connecting to target via SWD
+Target voltage too low. Please check https://kb.segger.com/J-Link_cannot_connect_to_the_CPU#Target_connection.
+Error occurred: Could not connect to the target device.
+For troubleshooting steps visit: https://kb.segger.com/J-Link_Troubleshooting
+
+Script processing completed.
+

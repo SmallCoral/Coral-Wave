@@ -1,0 +1,14 @@
+[
+  {
+    "Path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\wm8978\\firmware\\wm8978-selftest\\main.c",
+    "Hash": "A957192FB5066B38E05E098448760A1677EACA5BF49032C56AAABD538E409E8D"
+  },
+  {
+    "Path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\wm8978\\firmware\\wm8978-selftest\\build\\control-hardware-pll12.bin",
+    "Hash": "7DEB560FDE4EADF119E3B37CEF08ADAEA7889BE0B469A98789DB87F6C90A5EB7"
+  },
+  {
+    "Path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\wm8978\\firmware\\wm8978-selftest\\build\\audio-hardware-pll12.bin",
+    "Hash": "11B39D0473B2CECBEFCE8C172DCD1C5EC921C53EC48D58ABE1059C2C6185A638"
+  }
+]

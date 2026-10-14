@@ -1,0 +1,2280 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<export version="E">
+  <design>
+    <source>C:\Users\sc\Documents\Dev\Hardware\wm8978\pcb\WM8978.kicad_sch</source>
+    <date>2026-10-14T20:37:06</date>
+    <tool>Eeschema 10.0.6</tool>
+    <sheet number="1" name="/" tstamps="/">
+      <title_block>
+        <title>SAMD21E18A + WM8978 USB Audio</title>
+        <company>USB full-duplex audio</company>
+        <rev>DCLK-1</rev>
+        <date>2026-09-23</date>
+        <source>WM8978.kicad_sch</source>
+        <comment number="1" value="48 kHz / 16-bit stereo playback + mono microphone capture"/>
+        <comment number="2" value="Separate 12 MHz MCU and 12.288 MHz audio clocks; codec I2S master"/>
+        <comment number="3" value=""/>
+        <comment number="4" value=""/>
+        <comment number="5" value=""/>
+        <comment number="6" value=""/>
+        <comment number="7" value=""/>
+        <comment number="8" value=""/>
+        <comment number="9" value=""/>
+      </title_block>
+    </sheet>
+  </design>
+  <components>
+    <comp ref="C75">
+      <value>100nF</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <fields>
+        <field name="Voltage">16V</field>
+        <field name="Dielectric">X7R</field>
+        <field name="Footprint">Capacitor_SMD:C_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Voltage" value="16V"/>
+      <property name="Dielectric" value="X7R"/>
+      <property name="Sheetname" value="WM8978"/>
+      <property name="Sheetfile" value="WM8978.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>d5fb7edf-182f-4f0a-8924-7cb61d6c9264</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C76">
+      <value>100nF</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <fields>
+        <field name="Voltage">16V</field>
+        <field name="Dielectric">X7R</field>
+        <field name="Footprint">Capacitor_SMD:C_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Voltage" value="16V"/>
+      <property name="Dielectric" value="X7R"/>
+      <property name="Sheetname" value="WM8978"/>
+      <property name="Sheetfile" value="WM8978.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>fcdc5415-e21c-4308-ac34-61d14c54d7e0</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C77">
+      <value>4.7uF</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <fields>
+        <field name="Voltage">16V</field>
+        <field name="Dielectric">X7R</field>
+        <field name="Footprint">Capacitor_SMD:C_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Voltage" value="16V"/>
+      <property name="Dielectric" value="X7R"/>
+      <property name="Sheetname" value="WM8978"/>
+      <property name="Sheetfile" value="WM8978.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>372a3697-baf2-4ade-9d44-aaafb0f17109</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C78">
+      <value>10uF</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <fields>
+        <field name="Voltage">16V</field>
+        <field name="Dielectric">X7R</field>
+        <field name="Footprint">Capacitor_SMD:C_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Voltage" value="16V"/>
+      <property name="Dielectric" value="X7R"/>
+      <property name="Sheetname" value="WM8978"/>
+      <property name="Sheetfile" value="WM8978.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>7c8d4d82-999f-4c6a-9dca-61c4a5a3f320</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C79">
+      <value>1uF</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <description>AC coupling from electret microphone to WM8978 LIP</description>
+      <fields>
+        <field name="Voltage">16V</field>
+        <field name="Dielectric">X7R</field>
+        <field name="Footprint">Capacitor_SMD:C_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description">AC coupling from electret microphone to WM8978 LIP</field>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Voltage" value="16V"/>
+      <property name="Dielectric" value="X7R"/>
+      <property name="Sheetname" value="WM8978"/>
+      <property name="Sheetfile" value="WM8978.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>abda54d5-c6cf-4e08-8132-0557b08a7a5a</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C80">
+      <value>1uF</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <description>AC-ground reference coupling to WM8978 LIN</description>
+      <fields>
+        <field name="Voltage">16V</field>
+        <field name="Dielectric">X7R</field>
+        <field name="Footprint">Capacitor_SMD:C_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description">AC-ground reference coupling to WM8978 LIN</field>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Voltage" value="16V"/>
+      <property name="Dielectric" value="X7R"/>
+      <property name="Sheetname" value="WM8978"/>
+      <property name="Sheetfile" value="WM8978.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>cbe0fbe1-67c3-418f-a7eb-ac35af5b333e</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C83">
+      <value>4.7uF</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <datasheet>https://atta.szlcsc.com/upload/public/pdf/source/20160218/1457707763339.pdf</datasheet>
+      <description>WM8978 VMID decoupling; 4.7uF low-ESR capacitor per datasheet Figure 72</description>
+      <fields>
+        <field name="Voltage">16V</field>
+        <field name="Dielectric">X7R</field>
+        <field name="Footprint">Capacitor_SMD:C_0603_1608Metric</field>
+        <field name="Datasheet">https://atta.szlcsc.com/upload/public/pdf/source/20160218/1457707763339.pdf</field>
+        <field name="Description">WM8978 VMID decoupling; 4.7uF low-ESR capacitor per datasheet Figure 72</field>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Voltage" value="16V"/>
+      <property name="Dielectric" value="X7R"/>
+      <property name="Sheetname" value="WM8978"/>
+      <property name="Sheetfile" value="WM8978.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>15c626fd-6f82-4ec4-a45d-3235a6902318</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C86">
+      <value>470uF/16V</value>
+      <footprint>Capacitor_SMD:CP_Elec_8x10.5</footprint>
+      <datasheet>https://api.pim.na.industrial.panasonic.com/file_stream/main/fileversion/3128</datasheet>
+      <fields>
+        <field name="Manufacturer">Panasonic</field>
+        <field name="MPN">EEEFK1C471P</field>
+        <field name="Case">8mm diameter, 10.2mm nominal height, FK size F</field>
+        <field name="Footprint">Capacitor_SMD:CP_Elec_8x10.5</field>
+        <field name="Datasheet">https://api.pim.na.industrial.panasonic.com/file_stream/main/fileversion/3128</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Device" part="C_Polarized" description="Polarized capacitor"/>
+      <property name="Manufacturer" value="Panasonic"/>
+      <property name="MPN" value="EEEFK1C471P"/>
+      <property name="Case" value="8mm diameter, 10.2mm nominal height, FK size F"/>
+      <property name="Sheetname" value="WM8978"/>
+      <property name="Sheetfile" value="WM8978.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="CP_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>f7acd2a3-c7b6-4e2c-9936-2d4857e48194</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C87">
+      <value>470uF/16V</value>
+      <footprint>Capacitor_SMD:CP_Elec_8x10.5</footprint>
+      <datasheet>https://api.pim.na.industrial.panasonic.com/file_stream/main/fileversion/3128</datasheet>
+      <fields>
+        <field name="Manufacturer">Panasonic</field>
+        <field name="MPN">EEEFK1C471P</field>
+        <field name="Case">8mm diameter, 10.2mm nominal height, FK size F</field>
+        <field name="Footprint">Capacitor_SMD:CP_Elec_8x10.5</field>
+        <field name="Datasheet">https://api.pim.na.industrial.panasonic.com/file_stream/main/fileversion/3128</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Device" part="C_Polarized" description="Polarized capacitor"/>
+      <property name="Manufacturer" value="Panasonic"/>
+      <property name="MPN" value="EEEFK1C471P"/>
+      <property name="Case" value="8mm diameter, 10.2mm nominal height, FK size F"/>
+      <property name="Sheetname" value="WM8978"/>
+      <property name="Sheetfile" value="WM8978.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="CP_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>29021200-f848-43f5-9c5d-b0360f4bae2b</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C88">
+      <value>100nF</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <datasheet>https://atta.szlcsc.com/upload/public/pdf/source/20160218/1457707763339.pdf</datasheet>
+      <description>WM8978 DCVDD local high-frequency bypass; place beside DCVDD/DGND</description>
+      <fields>
+        <field name="Voltage">16V</field>
+        <field name="Dielectric">X7R</field>
+        <field name="Footprint">Capacitor_SMD:C_0603_1608Metric</field>
+        <field name="Datasheet">https://atta.szlcsc.com/upload/public/pdf/source/20160218/1457707763339.pdf</field>
+        <field name="Description">WM8978 DCVDD local high-frequency bypass; place beside DCVDD/DGND</field>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Voltage" value="16V"/>
+      <property name="Dielectric" value="X7R"/>
+      <property name="Sheetname" value="WM8978"/>
+      <property name="Sheetfile" value="WM8978.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>6b29627b-65d5-4587-ac7b-1f80cb679354</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C89">
+      <value>4.7uF</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <datasheet>https://atta.szlcsc.com/upload/public/pdf/source/20160218/1457707763339.pdf</datasheet>
+      <description>WM8978 DBVDD decoupling; 4.7uF low-ESR capacitor per datasheet Figure 72</description>
+      <fields>
+        <field name="Voltage">16V</field>
+        <field name="Dielectric">X7R</field>
+        <field name="Footprint">Capacitor_SMD:C_0603_1608Metric</field>
+        <field name="Datasheet">https://atta.szlcsc.com/upload/public/pdf/source/20160218/1457707763339.pdf</field>
+        <field name="Description">WM8978 DBVDD decoupling; 4.7uF low-ESR capacitor per datasheet Figure 72</field>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Voltage" value="16V"/>
+      <property name="Dielectric" value="X7R"/>
+      <property name="Sheetname" value="WM8978"/>
+      <property name="Sheetfile" value="WM8978.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>1c294859-4123-45f0-b857-cd3388214ab9</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C90">
+      <value>100nF</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <datasheet>https://atta.szlcsc.com/upload/public/pdf/source/20160218/1457707763339.pdf</datasheet>
+      <description>WM8978 AVDD local high-frequency bypass; place beside AVDD/AGND</description>
+      <fields>
+        <field name="Voltage">16V</field>
+        <field name="Dielectric">X7R</field>
+        <field name="Footprint">Capacitor_SMD:C_0603_1608Metric</field>
+        <field name="Datasheet">https://atta.szlcsc.com/upload/public/pdf/source/20160218/1457707763339.pdf</field>
+        <field name="Description">WM8978 AVDD local high-frequency bypass; place beside AVDD/AGND</field>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Voltage" value="16V"/>
+      <property name="Dielectric" value="X7R"/>
+      <property name="Sheetname" value="WM8978"/>
+      <property name="Sheetfile" value="WM8978.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>3458438b-5ef8-4fd3-ab6d-b8ba3fb35b02</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C91">
+      <value>4.7uF</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <datasheet>https://atta.szlcsc.com/upload/public/pdf/source/20160218/1457707763339.pdf</datasheet>
+      <description>WM8978 AVDD decoupling; 4.7uF low-ESR capacitor per datasheet Figure 72</description>
+      <fields>
+        <field name="Voltage">16V</field>
+        <field name="Dielectric">X7R</field>
+        <field name="Footprint">Capacitor_SMD:C_0603_1608Metric</field>
+        <field name="Datasheet">https://atta.szlcsc.com/upload/public/pdf/source/20160218/1457707763339.pdf</field>
+        <field name="Description">WM8978 AVDD decoupling; 4.7uF low-ESR capacitor per datasheet Figure 72</field>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Voltage" value="16V"/>
+      <property name="Dielectric" value="X7R"/>
+      <property name="Sheetname" value="WM8978"/>
+      <property name="Sheetfile" value="WM8978.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>2aad358d-0ae0-42e6-8872-1636931d7120</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C92">
+      <value>100nF</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <datasheet>https://atta.szlcsc.com/upload/public/pdf/source/20160218/1457707763339.pdf</datasheet>
+      <description>WM8978 SPKVDD local high-frequency bypass; place beside SPKVDD/SPKGND</description>
+      <fields>
+        <field name="Voltage">16V</field>
+        <field name="Dielectric">X7R</field>
+        <field name="Footprint">Capacitor_SMD:C_0603_1608Metric</field>
+        <field name="Datasheet">https://atta.szlcsc.com/upload/public/pdf/source/20160218/1457707763339.pdf</field>
+        <field name="Description">WM8978 SPKVDD local high-frequency bypass; place beside SPKVDD/SPKGND</field>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Voltage" value="16V"/>
+      <property name="Dielectric" value="X7R"/>
+      <property name="Sheetname" value="WM8978"/>
+      <property name="Sheetfile" value="WM8978.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>5fb82d26-2c33-41f6-9f34-36c606fd4927</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C93">
+      <value>4.7uF</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <datasheet>https://atta.szlcsc.com/upload/public/pdf/source/20160218/1457707763339.pdf</datasheet>
+      <description>WM8978 SPKVDD decoupling; 4.7uF low-ESR capacitor per datasheet Figure 72</description>
+      <fields>
+        <field name="Voltage">16V</field>
+        <field name="Dielectric">X7R</field>
+        <field name="Footprint">Capacitor_SMD:C_0603_1608Metric</field>
+        <field name="Datasheet">https://atta.szlcsc.com/upload/public/pdf/source/20160218/1457707763339.pdf</field>
+        <field name="Description">WM8978 SPKVDD decoupling; 4.7uF low-ESR capacitor per datasheet Figure 72</field>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Voltage" value="16V"/>
+      <property name="Dielectric" value="X7R"/>
+      <property name="Sheetname" value="WM8978"/>
+      <property name="Sheetfile" value="WM8978.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>8f88f568-3576-4eed-a24b-442a0d06dc93</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C96">
+      <value>4.7uF</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <description>WM8978 MICBIAS decoupling; 4.7uF low-ESR capacitor per datasheet Figure 72</description>
+      <fields>
+        <field name="Voltage">16V</field>
+        <field name="Dielectric">X7R</field>
+        <field name="Footprint">Capacitor_SMD:C_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description">WM8978 MICBIAS decoupling; 4.7uF low-ESR capacitor per datasheet Figure 72</field>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Voltage" value="16V"/>
+      <property name="Dielectric" value="X7R"/>
+      <property name="Sheetname" value="WM8978"/>
+      <property name="Sheetfile" value="WM8978.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>161c66da-9672-406d-8850-05f7c8219fb2</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C97">
+      <value>100nF</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <fields>
+        <field name="Voltage">16V</field>
+        <field name="Dielectric">X7R</field>
+        <field name="Footprint">Capacitor_SMD:C_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Voltage" value="16V"/>
+      <property name="Dielectric" value="X7R"/>
+      <property name="Sheetname" value="WM8978"/>
+      <property name="Sheetfile" value="WM8978.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>b1977346-b30c-44d1-b922-bdaf995ca868</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C98">
+      <value>10uF / 16V</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <fields>
+        <field name="Voltage">16V</field>
+        <field name="Dielectric">X7R</field>
+        <field name="Footprint">Capacitor_SMD:C_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Voltage" value="16V"/>
+      <property name="Dielectric" value="X7R"/>
+      <property name="Sheetname" value="WM8978"/>
+      <property name="Sheetfile" value="WM8978.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>701f86a0-e11a-4e47-8e64-86583dbc7229</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C99">
+      <value>100nF</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <fields>
+        <field name="Voltage">16V</field>
+        <field name="Dielectric">X7R</field>
+        <field name="Footprint">Capacitor_SMD:C_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Voltage" value="16V"/>
+      <property name="Dielectric" value="X7R"/>
+      <property name="Sheetname" value="WM8978"/>
+      <property name="Sheetfile" value="WM8978.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>d65d3d45-c87d-4406-b45b-6e8cf0dfcaf0</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C100">
+      <value>10uF / 16V</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <fields>
+        <field name="Voltage">16V</field>
+        <field name="Dielectric">X7R</field>
+        <field name="Footprint">Capacitor_SMD:C_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Voltage" value="16V"/>
+      <property name="Dielectric" value="X7R"/>
+      <property name="Sheetname" value="WM8978"/>
+      <property name="Sheetfile" value="WM8978.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>e941c262-4cf0-43d8-be29-14e022ea59a9</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C101">
+      <value>1uF / 16V</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <fields>
+        <field name="Voltage">16V</field>
+        <field name="Dielectric">X7R</field>
+        <field name="Footprint">Capacitor_SMD:C_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Voltage" value="16V"/>
+      <property name="Dielectric" value="X7R"/>
+      <property name="Sheetname" value="WM8978"/>
+      <property name="Sheetfile" value="WM8978.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>cfabcd07-e93b-4756-b1ec-c5573c1b8c9f</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C102">
+      <value>100nF</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <fields>
+        <field name="Voltage">16V</field>
+        <field name="Dielectric">X7R</field>
+        <field name="Footprint">Capacitor_SMD:C_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Voltage" value="16V"/>
+      <property name="Dielectric" value="X7R"/>
+      <property name="Sheetname" value="WM8978"/>
+      <property name="Sheetfile" value="WM8978.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>3754c6f5-3564-4833-a89a-939436701cdd</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C103">
+      <value>10nF</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <fields>
+        <field name="Voltage">16V</field>
+        <field name="Dielectric">X7R</field>
+        <field name="Footprint">Capacitor_SMD:C_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Voltage" value="16V"/>
+      <property name="Dielectric" value="X7R"/>
+      <property name="Sheetname" value="WM8978"/>
+      <property name="Sheetfile" value="WM8978.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>7b418f72-a6d4-45c6-9898-2e4ab857238f</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C104">
+      <value>100nF</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <fields>
+        <field name="Voltage">16V</field>
+        <field name="Dielectric">X7R</field>
+        <field name="Footprint">Capacitor_SMD:C_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Voltage" value="16V"/>
+      <property name="Dielectric" value="X7R"/>
+      <property name="Sheetname" value="WM8978"/>
+      <property name="Sheetfile" value="WM8978.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>148c4b42-7ffe-4bbf-911f-1960092d1b71</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C105">
+      <value>1uF</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <fields>
+        <field name="Voltage">16V</field>
+        <field name="Dielectric">X7R</field>
+        <field name="Footprint">Capacitor_SMD:C_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Voltage" value="16V"/>
+      <property name="Dielectric" value="X7R"/>
+      <property name="Sheetname" value="WM8978"/>
+      <property name="Sheetfile" value="WM8978.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>1d656a60-5e45-46be-984c-f2887118b9b6</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C106">
+      <value>100nF</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <fields>
+        <field name="Voltage">16V</field>
+        <field name="Dielectric">X7R</field>
+        <field name="Footprint">Capacitor_SMD:C_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Voltage" value="16V"/>
+      <property name="Dielectric" value="X7R"/>
+      <property name="Sheetname" value="WM8978"/>
+      <property name="Sheetfile" value="WM8978.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>6ae75cae-4774-4559-885b-919f88db92c7</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C107">
+      <value>4.7uF</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <fields>
+        <field name="Voltage">16V</field>
+        <field name="Dielectric">X7R</field>
+        <field name="Footprint">Capacitor_SMD:C_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Voltage" value="16V"/>
+      <property name="Dielectric" value="X7R"/>
+      <property name="Sheetname" value="WM8978"/>
+      <property name="Sheetfile" value="WM8978.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>d71780cf-9585-4645-b91b-7480b9197ae6</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="CN2">
+      <value>HEADPHONE 3.5mm</value>
+      <footprint>WM8978-import-fps:AUDIO-TH_PJ-3136-B</footprint>
+      <datasheet>https://atta.szlcsc.com/upload/public/pdf/source/20231101/FB45AABFD04C0979FDEE8A028D0B6336.pdf</datasheet>
+      <fields>
+        <field name="Manufacturer">XKB</field>
+        <field name="MPN">PJ-3136-B</field>
+        <field name="Footprint">WM8978-import-fps:AUDIO-TH_PJ-3136-B</field>
+        <field name="Datasheet">https://atta.szlcsc.com/upload/public/pdf/source/20231101/FB45AABFD04C0979FDEE8A028D0B6336.pdf</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="WM8978-easyedapro" part="PJ-3136-B" description=""/>
+      <property name="Manufacturer" value="XKB"/>
+      <property name="MPN" value="PJ-3136-B"/>
+      <property name="Sheetname" value="WM8978"/>
+      <property name="Sheetfile" value="WM8978.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>92e2fb38-9736-4760-a5d2-31960db4d3a6</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="2"/>
+            <pin num="3"/>
+            <pin num="4"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="D1">
+      <value>PESD5V0U1BA</value>
+      <footprint>Diode_SMD:D_SOD-323</footprint>
+      <datasheet>https://assets.nexperia.com/documents/data-sheet/PESD5V0U1BA.pdf</datasheet>
+      <description>Low-capacitance bidirectional USB ESD protection</description>
+      <fields>
+        <field name="Footprint">Diode_SMD:D_SOD-323</field>
+        <field name="Datasheet">https://assets.nexperia.com/documents/data-sheet/PESD5V0U1BA.pdf</field>
+        <field name="Description">Low-capacitance bidirectional USB ESD protection</field>
+      </fields>
+      <libsource lib="Device" part="D_TVS" description="Bidirectional transient-voltage-suppression diode"/>
+      <property name="Sheetname" value="WM8978"/>
+      <property name="Sheetfile" value="WM8978.kicad_sch"/>
+      <property name="ki_keywords" value="diode TVS thyrector"/>
+      <property name="ki_fp_filters" value="TO-???* *_Diode_* *SingleDiode* D_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>81277de6-8e99-4ce5-850b-b444e5278a5c</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="D2">
+      <value>PESD5V0U1BA</value>
+      <footprint>Diode_SMD:D_SOD-323</footprint>
+      <datasheet>https://assets.nexperia.com/documents/data-sheet/PESD5V0U1BA.pdf</datasheet>
+      <description>Low-capacitance bidirectional USB ESD protection</description>
+      <fields>
+        <field name="Footprint">Diode_SMD:D_SOD-323</field>
+        <field name="Datasheet">https://assets.nexperia.com/documents/data-sheet/PESD5V0U1BA.pdf</field>
+        <field name="Description">Low-capacitance bidirectional USB ESD protection</field>
+      </fields>
+      <libsource lib="Device" part="D_TVS" description="Bidirectional transient-voltage-suppression diode"/>
+      <property name="Sheetname" value="WM8978"/>
+      <property name="Sheetfile" value="WM8978.kicad_sch"/>
+      <property name="ki_keywords" value="diode TVS thyrector"/>
+      <property name="ki_fp_filters" value="TO-???* *_Diode_* *SingleDiode* D_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>aabb47fd-6c0e-4188-ac3c-c5fa7211adcf</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="J2">
+      <value>JLINK SWD</value>
+      <footprint>Connector_JST:JST_XH_B4B-XH-A_1x04_P2.50mm_Vertical</footprint>
+      <description>JST XH 2.50mm, VTref/SWDIO/SWCLK/GND; no external reset</description>
+      <fields>
+        <field name="Manufacturer">JST</field>
+        <field name="MPN">B4B-XH-A(LF)(SN)</field>
+        <field name="Footprint">Connector_JST:JST_XH_B4B-XH-A_1x04_P2.50mm_Vertical</field>
+        <field name="Datasheet"/>
+        <field name="Description">JST XH 2.50mm, VTref/SWDIO/SWCLK/GND; no external reset</field>
+      </fields>
+      <libsource lib="WM8978-local" part="SWD_4pin" description="4-pin SWD, JST XH 2.50 mm"/>
+      <property name="Manufacturer" value="JST"/>
+      <property name="MPN" value="B4B-XH-A(LF)(SN)"/>
+      <property name="Sheetname" value="WM8978"/>
+      <property name="Sheetfile" value="WM8978.kicad_sch"/>
+      <property name="ki_keywords" value="SWD JST XH 4 pin"/>
+      <property name="ki_fp_filters" value="Connector*:*_1x??_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>839a9fb4-2f96-4fc9-8f02-9c5ea8bf8c52</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+            <pin num="3"/>
+            <pin num="4"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="MIC1">
+      <value>ELECTRET MIC</value>
+      <footprint>WM8978-import-fps:MIC-TH_BD4.0-P1.40-D0.4-L-FD</footprint>
+      <datasheet>https://atta.szlcsc.com/upload/public/pdf/source/20180613/C233304_D8FE5A0D9DC594913DFA1A209BBF4764.pdf</datasheet>
+      <description>On-board electret microphone for USB audio capture</description>
+      <fields>
+        <field name="Footprint">WM8978-import-fps:MIC-TH_BD4.0-P1.40-D0.4-L-FD</field>
+        <field name="Datasheet">https://atta.szlcsc.com/upload/public/pdf/source/20180613/C233304_D8FE5A0D9DC594913DFA1A209BBF4764.pdf</field>
+        <field name="Description">On-board electret microphone for USB audio capture</field>
+      </fields>
+      <libsource lib="WM8978-easyedapro" part="GMI4015P-2C-42DB" description=""/>
+      <property name="Sheetname" value="WM8978"/>
+      <property name="Sheetfile" value="WM8978.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>e01d5f78-c21c-4b44-a2b5-a41dbbaec694</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R53">
+      <value>22R</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value="WM8978"/>
+      <property name="Sheetfile" value="WM8978.kicad_sch"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>3b0a8b42-25dc-4ffa-aedb-86cbdf6137b4</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R54">
+      <value>22R</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value="WM8978"/>
+      <property name="Sheetfile" value="WM8978.kicad_sch"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>1ab87381-97de-4a5d-b985-2a18d83723b6</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R63">
+      <value>4.7k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <datasheet>https://atta.szlcsc.com/upload/public/pdf/source/20180316/70C0E2BDAE7FCC62C531A5A58D202EE1.pdf</datasheet>
+      <fields>
+        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Datasheet">https://atta.szlcsc.com/upload/public/pdf/source/20180316/70C0E2BDAE7FCC62C531A5A58D202EE1.pdf</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value="WM8978"/>
+      <property name="Sheetfile" value="WM8978.kicad_sch"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>f861abfd-170c-41ba-996a-adc75d3604dc</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R64">
+      <value>4.7k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <datasheet>https://atta.szlcsc.com/upload/public/pdf/source/20180316/70C0E2BDAE7FCC62C531A5A58D202EE1.pdf</datasheet>
+      <fields>
+        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Datasheet">https://atta.szlcsc.com/upload/public/pdf/source/20180316/70C0E2BDAE7FCC62C531A5A58D202EE1.pdf</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value="WM8978"/>
+      <property name="Sheetfile" value="WM8978.kicad_sch"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>06bc271a-a450-4881-aafc-dd2ffede0e33</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R65">
+      <value>5.1k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <datasheet>https://atta.szlcsc.com/upload/public/pdf/source/20200306/C422600_1E6D84923E4A46A82E41ADD87F860B5C.pdf</datasheet>
+      <fields>
+        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Datasheet">https://atta.szlcsc.com/upload/public/pdf/source/20200306/C422600_1E6D84923E4A46A82E41ADD87F860B5C.pdf</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value="WM8978"/>
+      <property name="Sheetfile" value="WM8978.kicad_sch"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>8b7f5c4b-dd25-4f84-9a62-97b618fa5182</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R66">
+      <value>5.1k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <datasheet>https://atta.szlcsc.com/upload/public/pdf/source/20200306/C422600_1E6D84923E4A46A82E41ADD87F860B5C.pdf</datasheet>
+      <fields>
+        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Datasheet">https://atta.szlcsc.com/upload/public/pdf/source/20200306/C422600_1E6D84923E4A46A82E41ADD87F860B5C.pdf</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value="WM8978"/>
+      <property name="Sheetfile" value="WM8978.kicad_sch"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>460ef09e-dbf3-4691-b86f-051a1d37af0b</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R68">
+      <value>2.2k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <description>Electret microphone bias resistor from WM8978 MICBIAS</description>
+      <fields>
+        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description">Electret microphone bias resistor from WM8978 MICBIAS</field>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value="WM8978"/>
+      <property name="Sheetfile" value="WM8978.kicad_sch"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>788f230a-9a48-4caf-a19f-56d7f56bd6b6</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R70">
+      <value>10k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value="WM8978"/>
+      <property name="Sheetfile" value="WM8978.kicad_sch"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>15335e84-1e4f-47b6-9703-9dad721ae177</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R71">
+      <value>1k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value="WM8978"/>
+      <property name="Sheetfile" value="WM8978.kicad_sch"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>99e997e3-f9b0-41fd-b3b5-bb4528c1388f</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R73">
+      <value>33R</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value="WM8978"/>
+      <property name="Sheetfile" value="WM8978.kicad_sch"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>2a90c33d-8092-4b6a-8780-b91b503e5db0</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R74">
+      <value>100k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value="WM8978"/>
+      <property name="Sheetfile" value="WM8978.kicad_sch"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>5d91816d-fc78-4406-bdae-e0c95d1f1930</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R75">
+      <value>33R</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Tolerance">1%</field>
+        <field name="Power">0.1W</field>
+        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Tolerance" value="1%"/>
+      <property name="Power" value="0.1W"/>
+      <property name="Sheetname" value="WM8978"/>
+      <property name="Sheetfile" value="WM8978.kicad_sch"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>15fede5d-138a-4028-a34b-102f4e43496f</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R76">
+      <value>33R</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Tolerance">1%</field>
+        <field name="Power">0.1W</field>
+        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Tolerance" value="1%"/>
+      <property name="Power" value="0.1W"/>
+      <property name="Sheetname" value="WM8978"/>
+      <property name="Sheetfile" value="WM8978.kicad_sch"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>3809cc69-3dd7-4d3b-a0f9-ff4e9ef15a35</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R78">
+      <value>61.9k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Tolerance">1%</field>
+        <field name="Power">0.1W</field>
+        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Tolerance" value="1%"/>
+      <property name="Power" value="0.1W"/>
+      <property name="Sheetname" value="WM8978"/>
+      <property name="Sheetfile" value="WM8978.kicad_sch"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>7734793e-a6d0-459f-a22b-c994e9eba630</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="SPK2">
+      <value>SPEAKER 8R BTL</value>
+      <footprint>Connector_JST:JST_PH_B2B-PH-K_1x02_P2.00mm_Vertical</footprint>
+      <datasheet>https://atta.szlcsc.com/upload/public/pdf/source/20200113/C482322_D09CD61BAFBB8D4AD64070E01BFD18FF.pdf</datasheet>
+      <fields>
+        <field name="Footprint">Connector_JST:JST_PH_B2B-PH-K_1x02_P2.00mm_Vertical</field>
+        <field name="Datasheet">https://atta.szlcsc.com/upload/public/pdf/source/20200113/C482322_D09CD61BAFBB8D4AD64070E01BFD18FF.pdf</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="WM8978-easyedapro" part="FS-2308" description=""/>
+      <property name="Sheetname" value="WM8978"/>
+      <property name="Sheetfile" value="WM8978.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>a08702f4-6644-4822-8d24-129fc64d836b</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="U1">
+      <value>ATSAMD21E18A-A</value>
+      <footprint>Package_QFP:TQFP-32_7x7mm_P0.8mm</footprint>
+      <datasheet>http://ww1.microchip.com/downloads/en/DeviceDoc/SAM_D21_DA1_Family_Data%20Sheet_DS40001882E.pdf</datasheet>
+      <description>SAM D21 Microchip SMART ARM-based Flash MCU, 48Mhz, 256K Flash, 32K SRAM, TQFP-32</description>
+      <fields>
+        <field name="Manufacturer">Microchip</field>
+        <field name="MPN">ATSAMD21E18A-AU</field>
+        <field name="Silicon revision">Use C/D/H; reject silicon A/B. Read DSU.DID. Apply DS80000760M errata.</field>
+        <field name="Footprint">Package_QFP:TQFP-32_7x7mm_P0.8mm</field>
+        <field name="Datasheet">http://ww1.microchip.com/downloads/en/DeviceDoc/SAM_D21_DA1_Family_Data%20Sheet_DS40001882E.pdf</field>
+        <field name="Description">SAM D21 Microchip SMART ARM-based Flash MCU, 48Mhz, 256K Flash, 32K SRAM, TQFP-32</field>
+      </fields>
+      <libsource lib="WM8978-local" part="SAMD21E18A_Wired" description="SAM D21 Microchip SMART ARM-based Flash MCU, 48Mhz, 256K Flash, 32K SRAM, TQFP-32"/>
+      <property name="Manufacturer" value="Microchip"/>
+      <property name="MPN" value="ATSAMD21E18A-AU"/>
+      <property name="Silicon revision" value="Use C/D/H; reject silicon A/B. Read DSU.DID. Apply DS80000760M errata."/>
+      <property name="Sheetname" value="WM8978"/>
+      <property name="Sheetfile" value="WM8978.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>7ef86f4d-bb26-41e4-8f95-5d387fa78dde</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="23"/>
+            <pin num="24"/>
+            <pin num="31"/>
+            <pin num="32"/>
+            <pin num="26"/>
+            <pin num="10"/>
+            <pin num="28"/>
+            <pin num="1"/>
+            <pin num="30"/>
+            <pin num="2"/>
+            <pin num="3"/>
+            <pin num="4"/>
+            <pin num="5"/>
+            <pin num="6"/>
+            <pin num="7"/>
+            <pin num="12"/>
+            <pin num="9"/>
+            <pin num="16"/>
+            <pin num="17"/>
+            <pin num="18"/>
+            <pin num="20"/>
+            <pin num="25"/>
+            <pin num="27"/>
+            <pin num="29"/>
+            <pin num="11"/>
+            <pin num="8"/>
+            <pin num="14"/>
+            <pin num="13"/>
+            <pin num="15"/>
+            <pin num="22"/>
+            <pin num="21"/>
+            <pin num="19"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="U15">
+      <value>TLV1117LV33DCYR</value>
+      <footprint>Package_TO_SOT_SMD:SOT-223</footprint>
+      <fields>
+        <field name="Manufacturer">Texas Instruments</field>
+        <field name="MPN">TLV1117LV33DCYR</field>
+        <field name="Footprint">Package_TO_SOT_SMD:SOT-223</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="WM8978-easyedapro" part="AMS1117" description=""/>
+      <property name="Manufacturer" value="Texas Instruments"/>
+      <property name="MPN" value="TLV1117LV33DCYR"/>
+      <property name="Sheetname" value="WM8978"/>
+      <property name="Sheetfile" value="WM8978.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>268a8c2c-3c67-4a99-a9e5-229c291effd2</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="3"/>
+            <pin num="1"/>
+            <pin num="2"/>
+            <pin num="4"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="U16">
+      <value>WM8978CGEFL/RV</value>
+      <footprint>Package_DFN_QFN:QFN-32-1EP_5x5mm_P0.5mm_EP3.45x3.45mm</footprint>
+      <datasheet>https://www.mouser.com/datasheet/2/76/WM8978_v4_5-1141768.pdf</datasheet>
+      <fields>
+        <field name="Manufacturer">Cirrus Logic / Wolfson</field>
+        <field name="MPN">WM8978CGEFL/RV</field>
+        <field name="Footprint">Package_DFN_QFN:QFN-32-1EP_5x5mm_P0.5mm_EP3.45x3.45mm</field>
+        <field name="Datasheet">https://www.mouser.com/datasheet/2/76/WM8978_v4_5-1141768.pdf</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="WM8978-local" part="WM8978C_Wired" description=""/>
+      <property name="Manufacturer" value="Cirrus Logic / Wolfson"/>
+      <property name="MPN" value="WM8978CGEFL/RV"/>
+      <property name="Sheetname" value="WM8978"/>
+      <property name="Sheetfile" value="WM8978.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>90aafc75-363d-4690-9e3a-cb6a35480426</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="9"/>
+            <pin num="10"/>
+            <pin num="7"/>
+            <pin num="8"/>
+            <pin num="11"/>
+            <pin num="16"/>
+            <pin num="17"/>
+            <pin num="18"/>
+            <pin num="15"/>
+            <pin num="13"/>
+            <pin num="12"/>
+            <pin num="24"/>
+            <pin num="28"/>
+            <pin num="14"/>
+            <pin num="33"/>
+            <pin num="3"/>
+            <pin num="4"/>
+            <pin num="5"/>
+            <pin num="31"/>
+            <pin num="6"/>
+            <pin num="19"/>
+            <pin num="20"/>
+            <pin num="21"/>
+            <pin num="22"/>
+            <pin num="26"/>
+            <pin num="29"/>
+            <pin num="30"/>
+            <pin num="23"/>
+            <pin num="25"/>
+            <pin num="32"/>
+            <pin num="1"/>
+            <pin num="2"/>
+            <pin num="27"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="U17">
+      <value>TPS2553DBVR</value>
+      <footprint>Package_TO_SOT_SMD:SOT-23-6</footprint>
+      <datasheet>https://www.ti.com/lit/ds/symlink/tps2553.pdf</datasheet>
+      <fields>
+        <field name="Manufacturer">Texas Instruments</field>
+        <field name="MPN">TPS2553DBVR</field>
+        <field name="Footprint">Package_TO_SOT_SMD:SOT-23-6</field>
+        <field name="Datasheet">https://www.ti.com/lit/ds/symlink/tps2553.pdf</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="WM8978-local" part="TPS2553DBV" description=""/>
+      <property name="Manufacturer" value="Texas Instruments"/>
+      <property name="MPN" value="TPS2553DBVR"/>
+      <property name="Sheetname" value="WM8978"/>
+      <property name="Sheetfile" value="WM8978.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>6ae8d720-4704-426d-8359-678392b5c393</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="3"/>
+            <pin num="2"/>
+            <pin num="6"/>
+            <pin num="4"/>
+            <pin num="5"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="USB2">
+      <value>USB-C USB2 DEVICE</value>
+      <footprint>WM8978-import-fps:USB_C_GCT_USB4105_GF_A</footprint>
+      <datasheet>https://gct.co/connector/usb4105</datasheet>
+      <fields>
+        <field name="Manufacturer">GCT</field>
+        <field name="MPN">USB4105-GF-A</field>
+        <field name="Footprint">WM8978-import-fps:USB_C_GCT_USB4105_GF_A</field>
+        <field name="Datasheet">https://gct.co/connector/usb4105</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="WM8978-local" part="USB4105_Wired" description=""/>
+      <property name="Manufacturer" value="GCT"/>
+      <property name="MPN" value="USB4105-GF-A"/>
+      <property name="Sheetname" value="WM8978"/>
+      <property name="Sheetfile" value="WM8978.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>9c0f6793-4e0d-42d7-9a53-85c10a7e29eb</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="A8"/>
+            <pin num="B8"/>
+            <pin num="1"/>
+            <pin num="2"/>
+            <pin num="3"/>
+            <pin num="4"/>
+            <pin num="A1"/>
+            <pin num="A12"/>
+            <pin num="B1"/>
+            <pin num="B12"/>
+            <pin num="A4"/>
+            <pin num="A9"/>
+            <pin num="B4"/>
+            <pin num="B9"/>
+            <pin num="A6"/>
+            <pin num="B6"/>
+            <pin num="A7"/>
+            <pin num="B7"/>
+            <pin num="A5"/>
+            <pin num="B5"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="Y1">
+      <value>12MHz / 3.3V / 50ppm</value>
+      <footprint>WM8978-import-fps:Oscillator_SMD_Abracon_ASE-4Pin_3.2x2.5mm</footprint>
+      <datasheet>https://abracon.com/Oscillators/ASEseries.pdf</datasheet>
+      <fields>
+        <field name="Manufacturer">Abracon</field>
+        <field name="MPN">ASE-12.000MHZ-LC-T</field>
+        <field name="Supplier Part">C596950</field>
+        <field name="Footprint">WM8978-import-fps:Oscillator_SMD_Abracon_ASE-4Pin_3.2x2.5mm</field>
+        <field name="Datasheet">https://abracon.com/Oscillators/ASEseries.pdf</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Oscillator" part="ASE-xxxMHz" description="3.3V CMOS SMD Crystal Clock Oscillator, Abracon"/>
+      <property name="Manufacturer" value="Abracon"/>
+      <property name="MPN" value="ASE-12.000MHZ-LC-T"/>
+      <property name="Supplier Part" value="C596950"/>
+      <property name="Sheetname" value="WM8978"/>
+      <property name="Sheetfile" value="WM8978.kicad_sch"/>
+      <property name="ki_keywords" value="3.3V CMOS SMD Crystal Clock Oscillator"/>
+      <property name="ki_fp_filters" value="Oscillator*SMD*Abracon*ASE*3.2x2.5mm*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>674465c8-c746-4b5d-af58-c85a851f672d</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="4"/>
+            <pin num="2"/>
+            <pin num="3"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="Y2">
+      <value>12.288MHz / 3.3V / 50ppm</value>
+      <footprint>WM8978-import-fps:Oscillator_SMD_Abracon_ASE-4Pin_3.2x2.5mm</footprint>
+      <datasheet>https://abracon.com/Oscillators/ASEseries.pdf</datasheet>
+      <fields>
+        <field name="Manufacturer">Abracon</field>
+        <field name="MPN">ASE-12.288MHZ-L-C-T</field>
+        <field name="Supplier Part"/>
+        <field name="Footprint">WM8978-import-fps:Oscillator_SMD_Abracon_ASE-4Pin_3.2x2.5mm</field>
+        <field name="Datasheet">https://abracon.com/Oscillators/ASEseries.pdf</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Oscillator" part="ASE-xxxMHz" description="3.3V CMOS SMD Crystal Clock Oscillator, Abracon"/>
+      <property name="Manufacturer" value="Abracon"/>
+      <property name="MPN" value="ASE-12.288MHZ-L-C-T"/>
+      <property name="Supplier Part" value=""/>
+      <property name="Sheetname" value="WM8978"/>
+      <property name="Sheetfile" value="WM8978.kicad_sch"/>
+      <property name="ki_keywords" value="3.3V CMOS SMD Crystal Clock Oscillator"/>
+      <property name="ki_fp_filters" value="Oscillator*SMD*Abracon*ASE*3.2x2.5mm*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>3f62479e-44cd-4f83-b620-babb25b03099</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="4"/>
+            <pin num="2"/>
+            <pin num="3"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+  </components>
+  <libparts>
+    <libpart lib="Device" part="C">
+      <description>Unpolarized capacitor</description>
+      <footprints>
+        <fp>C_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">C</field>
+        <field name="Value">C</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description">Unpolarized capacitor</field>
+      </fields>
+      <pins>
+        <pin num="1" name="" type="passive"/>
+        <pin num="2" name="" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Device" part="C_Polarized">
+      <description>Polarized capacitor</description>
+      <footprints>
+        <fp>CP_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">C</field>
+        <field name="Value">C_Polarized</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description">Polarized capacitor</field>
+      </fields>
+      <pins>
+        <pin num="1" name="" type="passive"/>
+        <pin num="2" name="" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Device" part="D_TVS">
+      <description>Bidirectional transient-voltage-suppression diode</description>
+      <footprints>
+        <fp>TO-???*</fp>
+        <fp>*_Diode_*</fp>
+        <fp>*SingleDiode*</fp>
+        <fp>D_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">D</field>
+        <field name="Value">D_TVS</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description">Bidirectional transient-voltage-suppression diode</field>
+      </fields>
+      <pins>
+        <pin num="1" name="A1" type="passive"/>
+        <pin num="2" name="A2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Device" part="R">
+      <description>Resistor</description>
+      <footprints>
+        <fp>R_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">R</field>
+        <field name="Value">R</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description">Resistor</field>
+      </fields>
+      <pins>
+        <pin num="1" name="" type="passive"/>
+        <pin num="2" name="" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Oscillator" part="ASE-xxxMHz">
+      <description>3.3V CMOS SMD Crystal Clock Oscillator, Abracon</description>
+      <docs>http://www.abracon.com/Oscillators/ASV.pdf</docs>
+      <footprints>
+        <fp>Oscillator*SMD*Abracon*ASE*3.2x2.5mm*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">Y</field>
+        <field name="Value">ASE-xxxMHz</field>
+        <field name="Footprint">Oscillator:Oscillator_SMD_Abracon_ASE-4Pin_3.2x2.5mm</field>
+        <field name="Datasheet">http://www.abracon.com/Oscillators/ASV.pdf</field>
+        <field name="Description">3.3V CMOS SMD Crystal Clock Oscillator, Abracon</field>
+      </fields>
+      <pins>
+        <pin num="1" name="EN" type="input"/>
+        <pin num="2" name="GND" type="power_in"/>
+        <pin num="3" name="OUT" type="output"/>
+        <pin num="4" name="Vdd" type="power_in"/>
+      </pins>
+    </libpart>
+    <libpart lib="WM8978-easyedapro" part="AMS1117">
+      <fields>
+        <field name="Reference"/>
+        <field name="Value"/>
+        <field name="Footprint">WM8978-easyedapro:SOT_223</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="GND" type="power_in"/>
+        <pin num="2" name="VOUT" type="power_out"/>
+        <pin num="3" name="VIN" type="power_in"/>
+        <pin num="4" name="TAB" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="WM8978-easyedapro" part="FS-2308">
+      <docs>https://atta.szlcsc.com/upload/public/pdf/source/20200113/C482322_D09CD61BAFBB8D4AD64070E01BFD18FF.pdf</docs>
+      <fields>
+        <field name="Reference">SPK</field>
+        <field name="Value"/>
+        <field name="Footprint">WM8978-easyedapro:BEEP-TH_BD23.2-P9.20-D1.0</field>
+        <field name="Datasheet">https://atta.szlcsc.com/upload/public/pdf/source/20200113/C482322_D09CD61BAFBB8D4AD64070E01BFD18FF.pdf</field>
+        <field name="Description"/>
+        <field name="Manufacturer Part">FS-2308</field>
+        <field name="Manufacturer">FUET(福声科技)</field>
+        <field name="Supplier Part">C482322</field>
+        <field name="Supplier">LCSC</field>
+        <field name="LCSC Part Name">喇叭23MM-8.0H 8Ω1W 插针</field>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="WM8978-easyedapro" part="GMI4015P-2C-42DB">
+      <docs>https://atta.szlcsc.com/upload/public/pdf/source/20180613/C233304_D8FE5A0D9DC594913DFA1A209BBF4764.pdf</docs>
+      <fields>
+        <field name="Reference">MIC</field>
+        <field name="Value"/>
+        <field name="Footprint">WM8978-easyedapro:MIC-TH_BD4.0-P1.40-D0.4-L-FD</field>
+        <field name="Datasheet">https://atta.szlcsc.com/upload/public/pdf/source/20180613/C233304_D8FE5A0D9DC594913DFA1A209BBF4764.pdf</field>
+        <field name="Description"/>
+        <field name="Manufacturer Part">GMI4015P-2C-42db</field>
+        <field name="Manufacturer">INGHAi(赢海)</field>
+        <field name="Supplier Part">C233292</field>
+        <field name="Supplier">LCSC</field>
+        <field name="LCSC Part Name">全指向双电容φ4.0*1.5mm 1.5V-10V 灵敏度-42dB 低阻抗</field>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="WM8978-easyedapro" part="PJ-3136-B">
+      <docs>https://atta.szlcsc.com/upload/public/pdf/source/20231101/FB45AABFD04C0979FDEE8A028D0B6336.pdf</docs>
+      <fields>
+        <field name="Reference">CN</field>
+        <field name="Value"/>
+        <field name="Footprint">WM8978-easyedapro:AUDIO-TH_PJ-3136-B</field>
+        <field name="Datasheet">https://atta.szlcsc.com/upload/public/pdf/source/20231101/FB45AABFD04C0979FDEE8A028D0B6336.pdf</field>
+        <field name="Description"/>
+        <field name="Manufacturer Part">PJ-3136-B</field>
+        <field name="Manufacturer">XKB Connectivity(中国星坤)</field>
+        <field name="Supplier Part">C381131</field>
+        <field name="Supplier">LCSC</field>
+        <field name="LCSC Part Name">3.5mm耳机座</field>
+      </fields>
+      <pins>
+        <pin num="2" name="2" type="passive"/>
+        <pin num="3" name="3" type="passive"/>
+        <pin num="4" name="4" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="WM8978-local" part="SAMD21E18A_Wired">
+      <description>SAM D21 Microchip SMART ARM-based Flash MCU, 48Mhz, 256K Flash, 32K SRAM, TQFP-32</description>
+      <docs>http://ww1.microchip.com/downloads/en/DeviceDoc/SAM_D21_DA1_Family_Data%20Sheet_DS40001882E.pdf</docs>
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">ATSAMD21E18A-A</field>
+        <field name="Footprint">Package_QFP:TQFP-32_7x7mm_P0.8mm</field>
+        <field name="Datasheet">http://ww1.microchip.com/downloads/en/DeviceDoc/SAM_D21_DA1_Family_Data%20Sheet_DS40001882E.pdf</field>
+        <field name="Description">SAM D21 Microchip SMART ARM-based Flash MCU, 48Mhz, 256K Flash, 32K SRAM, TQFP-32</field>
+        <field name="Manufacturer">Microchip</field>
+        <field name="MPN">ATSAMD21E18A-AU</field>
+        <field name="Silicon revision">Use C/D/H; reject silicon A/B. Read DSU.DID. Apply DS80000760M errata.</field>
+      </fields>
+      <pins>
+        <pin num="1" name="PA00" type="bidirectional"/>
+        <pin num="2" name="PA01" type="bidirectional"/>
+        <pin num="3" name="PA02" type="bidirectional"/>
+        <pin num="4" name="PA03" type="bidirectional"/>
+        <pin num="5" name="PA04" type="bidirectional"/>
+        <pin num="6" name="PA05" type="bidirectional"/>
+        <pin num="7" name="PA06" type="bidirectional"/>
+        <pin num="8" name="PA07_/_I2S_TX" type="bidirectional"/>
+        <pin num="9" name="VDDANA" type="power_in"/>
+        <pin num="10" name="GND" type="power_in"/>
+        <pin num="11" name="PA08_/_I2S_RX" type="bidirectional"/>
+        <pin num="12" name="PA09" type="bidirectional"/>
+        <pin num="13" name="PA10_/_SCK0" type="bidirectional"/>
+        <pin num="14" name="PA11_/_FS0" type="bidirectional"/>
+        <pin num="15" name="PA14_/_XIN" type="bidirectional"/>
+        <pin num="16" name="PA15" type="bidirectional"/>
+        <pin num="17" name="PA16" type="bidirectional"/>
+        <pin num="18" name="PA17" type="bidirectional"/>
+        <pin num="19" name="PA18_/_XO_EN" type="bidirectional"/>
+        <pin num="20" name="PA19" type="bidirectional"/>
+        <pin num="21" name="PA22_/_SDA" type="bidirectional"/>
+        <pin num="22" name="PA23_/_SCL" type="bidirectional"/>
+        <pin num="23" name="PA24_/_USB_DM" type="bidirectional"/>
+        <pin num="24" name="PA25_/_USB_DP" type="bidirectional"/>
+        <pin num="25" name="PA27" type="bidirectional"/>
+        <pin num="26" name="~{RESET}" type="input"/>
+        <pin num="27" name="PA28" type="bidirectional"/>
+        <pin num="28" name="GND" type="passive"/>
+        <pin num="29" name="VDDCORE" type="power_out"/>
+        <pin num="30" name="VDDIN" type="power_in"/>
+        <pin num="31" name="PA30_/_SWCLK" type="bidirectional"/>
+        <pin num="32" name="PA31_/_SWDIO" type="bidirectional"/>
+      </pins>
+    </libpart>
+    <libpart lib="WM8978-local" part="SWD_4pin">
+      <description>4-pin SWD, JST XH 2.50 mm</description>
+      <footprints>
+        <fp>Connector*:*_1x??_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">Conn_01x04</field>
+        <field name="Footprint">Connector_JST:JST_XH_B4B-XH-A_1x04_P2.50mm_Vertical</field>
+        <field name="Datasheet"/>
+        <field name="Description">4-pin SWD, JST XH 2.50 mm</field>
+      </fields>
+      <pins>
+        <pin num="1" name="Pin_1" type="passive"/>
+        <pin num="2" name="Pin_2" type="passive"/>
+        <pin num="3" name="Pin_3" type="passive"/>
+        <pin num="4" name="Pin_4" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="WM8978-local" part="TPS2553DBV">
+      <docs>https://www.ti.com/lit/ds/symlink/tps2553.pdf</docs>
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">TPS2553DBV</field>
+        <field name="Footprint">Package_TO_SOT_SMD:SOT-23-6</field>
+        <field name="Datasheet">https://www.ti.com/lit/ds/symlink/tps2553.pdf</field>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="IN" type="power_in"/>
+        <pin num="2" name="GND" type="power_in"/>
+        <pin num="3" name="EN" type="input"/>
+        <pin num="4" name="~{FAULT}" type="open_collector"/>
+        <pin num="5" name="ILIM" type="passive"/>
+        <pin num="6" name="OUT" type="power_out"/>
+      </pins>
+    </libpart>
+    <libpart lib="WM8978-local" part="USB4105_Wired">
+      <docs>https://gct.co/connector/usb4105</docs>
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">USB-C USB2 DEVICE</field>
+        <field name="Footprint">WM8978-import-fps:USB_C_GCT_USB4105_GF_A</field>
+        <field name="Datasheet">https://gct.co/connector/usb4105</field>
+        <field name="Description"/>
+        <field name="Manufacturer">GCT</field>
+        <field name="MPN">USB4105-GF-A</field>
+      </fields>
+      <pins>
+        <pin num="1" name="GND_/_SHIELD" type="passive"/>
+        <pin num="2" name="GND_/_SHIELD" type="passive"/>
+        <pin num="3" name="GND_/_SHIELD" type="passive"/>
+        <pin num="4" name="GND_/_SHIELD" type="passive"/>
+        <pin num="A1" name="GND_/_SHIELD" type="power_out"/>
+        <pin num="A4" name="VBUS" type="power_out"/>
+        <pin num="A5" name="CC1" type="passive"/>
+        <pin num="A6" name="D+" type="passive"/>
+        <pin num="A7" name="D-" type="passive"/>
+        <pin num="A8" name="SBU1" type="passive"/>
+        <pin num="A9" name="VBUS" type="passive"/>
+        <pin num="A12" name="GND_/_SHIELD" type="passive"/>
+        <pin num="B1" name="GND_/_SHIELD" type="passive"/>
+        <pin num="B4" name="VBUS" type="passive"/>
+        <pin num="B5" name="CC2" type="passive"/>
+        <pin num="B6" name="D+" type="passive"/>
+        <pin num="B7" name="D-" type="passive"/>
+        <pin num="B8" name="SBU2" type="passive"/>
+        <pin num="B9" name="VBUS" type="passive"/>
+        <pin num="B12" name="GND_/_SHIELD" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="WM8978-local" part="WM8978C_Wired">
+      <docs>https://www.mouser.com/datasheet/2/76/WM8978_v4_5-1141768.pdf</docs>
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">WM8978CGEFL/RV</field>
+        <field name="Footprint">Package_DFN_QFN:QFN-32-1EP_5x5mm_P0.5mm_EP3.45x3.45mm</field>
+        <field name="Datasheet">https://www.mouser.com/datasheet/2/76/WM8978_v4_5-1141768.pdf</field>
+        <field name="Description"/>
+        <field name="Manufacturer">Cirrus Logic / Wolfson</field>
+        <field name="MPN">WM8978CGEFL/RV</field>
+      </fields>
+      <pins>
+        <pin num="1" name="LIP" type="input"/>
+        <pin num="2" name="LIN" type="input"/>
+        <pin num="3" name="L2/GPIO2" type="input"/>
+        <pin num="4" name="RIP" type="input"/>
+        <pin num="5" name="RIN" type="input"/>
+        <pin num="6" name="R2/GPIO3" type="input"/>
+        <pin num="7" name="LRC" type="bidirectional"/>
+        <pin num="8" name="BCLK" type="bidirectional"/>
+        <pin num="9" name="ADCDAT" type="output"/>
+        <pin num="10" name="DACDAT" type="input"/>
+        <pin num="11" name="MCLK" type="input"/>
+        <pin num="12" name="DGND" type="power_in"/>
+        <pin num="13" name="DCVDD" type="power_in"/>
+        <pin num="14" name="DBVDD" type="power_in"/>
+        <pin num="15" name="CSB/GPIO1" type="input"/>
+        <pin num="16" name="SCLK" type="input"/>
+        <pin num="17" name="SDIN" type="bidirectional"/>
+        <pin num="18" name="MODE" type="input"/>
+        <pin num="19" name="AUXL" type="input"/>
+        <pin num="20" name="AUXR" type="input"/>
+        <pin num="21" name="OUT4" type="output"/>
+        <pin num="22" name="OUT3" type="output"/>
+        <pin num="23" name="ROUT2" type="output"/>
+        <pin num="24" name="SPKGND" type="power_in"/>
+        <pin num="25" name="LOUT2" type="output"/>
+        <pin num="26" name="SPKVDD" type="power_in"/>
+        <pin num="27" name="VMID" type="output"/>
+        <pin num="28" name="AGND" type="power_in"/>
+        <pin num="29" name="ROUT1" type="output"/>
+        <pin num="30" name="LOUT1" type="output"/>
+        <pin num="31" name="AVDD" type="power_in"/>
+        <pin num="32" name="MICBIAS" type="output"/>
+        <pin num="33" name="EPAD" type="power_in"/>
+      </pins>
+    </libpart>
+  </libparts>
+  <libraries>
+    <library logical="Device">
+      <uri>${KICAD10_SYMBOL_DIR}/Device.kicad_sym</uri>
+    </library>
+    <library logical="Oscillator">
+      <uri>${KICAD10_SYMBOL_DIR}/Oscillator.kicad_sym</uri>
+    </library>
+    <library logical="WM8978-easyedapro">
+      <uri>${KIPRJMOD}/WM8978-easyedapro.kicad_sym</uri>
+    </library>
+    <library logical="WM8978-local">
+      <uri>${KIPRJMOD}/WM8978-local.kicad_sym</uri>
+    </library>
+  </libraries>
+  <nets>
+    <net code="1" name="+3V3" class="Default">
+      <node ref="C100" pin="1" pintype="passive"/>
+      <node ref="C103" pin="1" pintype="passive"/>
+      <node ref="C104" pin="1" pintype="passive"/>
+      <node ref="C106" pin="1" pintype="passive"/>
+      <node ref="C107" pin="1" pintype="passive"/>
+      <node ref="C76" pin="1" pintype="passive"/>
+      <node ref="C78" pin="1" pintype="passive"/>
+      <node ref="C88" pin="1" pintype="passive"/>
+      <node ref="C89" pin="1" pintype="passive"/>
+      <node ref="C90" pin="1" pintype="passive"/>
+      <node ref="C91" pin="1" pintype="passive"/>
+      <node ref="C97" pin="1" pintype="passive"/>
+      <node ref="C98" pin="1" pintype="passive"/>
+      <node ref="C99" pin="1" pintype="passive"/>
+      <node ref="J2" pin="1" pinfunction="Pin_1_1" pintype="passive"/>
+      <node ref="R63" pin="2" pintype="passive"/>
+      <node ref="R64" pin="2" pintype="passive"/>
+      <node ref="R70" pin="1" pintype="passive"/>
+      <node ref="R71" pin="1" pintype="passive"/>
+      <node ref="U1" pin="30" pinfunction="VDDIN_30" pintype="power_in"/>
+      <node ref="U1" pin="9" pinfunction="VDDANA_9" pintype="power_in"/>
+      <node ref="U15" pin="2" pinfunction="VOUT_2" pintype="power_out"/>
+      <node ref="U15" pin="4" pinfunction="TAB_4" pintype="passive"/>
+      <node ref="U16" pin="13" pinfunction="DCVDD_13" pintype="power_in"/>
+      <node ref="U16" pin="14" pinfunction="DBVDD_14" pintype="power_in"/>
+      <node ref="U16" pin="31" pinfunction="AVDD_31" pintype="power_in"/>
+      <node ref="Y1" pin="4" pinfunction="Vdd_4" pintype="power_in"/>
+      <node ref="Y2" pin="4" pinfunction="Vdd_4" pintype="power_in"/>
+    </net>
+    <net code="2" name="/AUDIO_CLK_EN" class="Default">
+      <node ref="R74" pin="1" pintype="passive"/>
+      <node ref="U1" pin="19" pinfunction="PA18_/_XO_EN_19" pintype="bidirectional"/>
+      <node ref="Y1" pin="1" pinfunction="EN_1" pintype="input"/>
+      <node ref="Y2" pin="1" pinfunction="EN_1" pintype="input"/>
+    </net>
+    <net code="3" name="/AUDIO_MCLK" class="Default">
+      <node ref="R73" pin="2" pintype="passive"/>
+      <node ref="U16" pin="11" pinfunction="MCLK_11" pintype="input"/>
+    </net>
+    <net code="4" name="/AUDIO_OSC" class="Default">
+      <node ref="R73" pin="1" pintype="passive"/>
+      <node ref="Y2" pin="3" pinfunction="OUT_3" pintype="output"/>
+    </net>
+    <net code="5" name="/CODEC_BCLK" class="Default">
+      <node ref="R75" pin="1" pintype="passive"/>
+      <node ref="U16" pin="8" pinfunction="BCLK_8" pintype="bidirectional"/>
+    </net>
+    <net code="6" name="/CODEC_LRCLK" class="Default">
+      <node ref="R76" pin="1" pintype="passive"/>
+      <node ref="U16" pin="7" pinfunction="LRC_7" pintype="bidirectional"/>
+    </net>
+    <net code="7" name="/CODEC_SCL" class="Default">
+      <node ref="R64" pin="1" pintype="passive"/>
+      <node ref="U1" pin="22" pinfunction="PA23_/_SCL_22" pintype="bidirectional"/>
+      <node ref="U16" pin="16" pinfunction="SCLK_16" pintype="input"/>
+    </net>
+    <net code="8" name="/CODEC_SDA" class="Default">
+      <node ref="R63" pin="1" pintype="passive"/>
+      <node ref="U1" pin="21" pinfunction="PA22_/_SDA_21" pintype="bidirectional"/>
+      <node ref="U16" pin="17" pinfunction="SDIN_17" pintype="bidirectional"/>
+    </net>
+    <net code="9" name="/I2S_ADCDAT" class="Default">
+      <node ref="U1" pin="11" pinfunction="PA08_/_I2S_RX_11" pintype="bidirectional"/>
+      <node ref="U16" pin="9" pinfunction="ADCDAT_9" pintype="output"/>
+    </net>
+    <net code="10" name="/I2S_BCLK" class="Default">
+      <node ref="R75" pin="2" pintype="passive"/>
+      <node ref="U1" pin="13" pinfunction="PA10_/_SCK0_13" pintype="bidirectional"/>
+    </net>
+    <net code="11" name="/I2S_DACDAT" class="Default">
+      <node ref="U1" pin="8" pinfunction="PA07_/_I2S_TX_8" pintype="bidirectional"/>
+      <node ref="U16" pin="10" pinfunction="DACDAT_10" pintype="input"/>
+    </net>
+    <net code="12" name="/I2S_LRCLK" class="Default">
+      <node ref="R76" pin="2" pintype="passive"/>
+      <node ref="U1" pin="14" pinfunction="PA11_/_FS0_14" pintype="bidirectional"/>
+    </net>
+    <net code="13" name="/MCU_12M" class="Default">
+      <node ref="U1" pin="15" pinfunction="PA14_/_XIN_15" pintype="bidirectional"/>
+      <node ref="Y1" pin="3" pinfunction="OUT_3" pintype="output"/>
+    </net>
+    <net code="14" name="/MCU_RESET_N" class="Default">
+      <node ref="C102" pin="1" pintype="passive"/>
+      <node ref="R70" pin="2" pintype="passive"/>
+      <node ref="U1" pin="26" pinfunction="~{RESET}_26" pintype="input"/>
+    </net>
+    <net code="15" name="/MICBIAS" class="Default">
+      <node ref="C96" pin="1" pintype="passive"/>
+      <node ref="R68" pin="1" pintype="passive"/>
+      <node ref="U16" pin="32" pinfunction="MICBIAS_32" pintype="output"/>
+    </net>
+    <net code="16" name="/MIC_LIN" class="Default">
+      <node ref="C80" pin="1" pintype="passive"/>
+      <node ref="U16" pin="2" pinfunction="LIN_2" pintype="input"/>
+    </net>
+    <net code="17" name="/MIC_LIP" class="Default">
+      <node ref="C79" pin="1" pintype="passive"/>
+      <node ref="U16" pin="1" pinfunction="LIP_1" pintype="input"/>
+    </net>
+    <net code="18" name="/SWCLK" class="Default">
+      <node ref="J2" pin="3" pinfunction="Pin_3_3" pintype="passive"/>
+      <node ref="R71" pin="2" pintype="passive"/>
+      <node ref="U1" pin="31" pinfunction="PA30_/_SWCLK_31" pintype="bidirectional"/>
+    </net>
+    <net code="19" name="/SWDIO" class="Default">
+      <node ref="J2" pin="2" pinfunction="Pin_2_2" pintype="passive"/>
+      <node ref="U1" pin="32" pinfunction="PA31_/_SWDIO_32" pintype="bidirectional"/>
+    </net>
+    <net code="20" name="/USB_DM" class="Default">
+      <node ref="R54" pin="2" pintype="passive"/>
+      <node ref="U1" pin="23" pinfunction="PA24_/_USB_DM_23" pintype="bidirectional"/>
+    </net>
+    <net code="21" name="/USB_DP" class="Default">
+      <node ref="R53" pin="2" pintype="passive"/>
+      <node ref="U1" pin="24" pinfunction="PA25_/_USB_DP_24" pintype="bidirectional"/>
+    </net>
+    <net code="22" name="/VBUS_5V" class="POWER">
+      <node ref="C75" pin="1" pintype="passive"/>
+      <node ref="C77" pin="1" pintype="passive"/>
+      <node ref="C92" pin="2" pintype="passive"/>
+      <node ref="C93" pin="2" pintype="passive"/>
+      <node ref="U15" pin="3" pinfunction="VIN_3" pintype="power_in"/>
+      <node ref="U16" pin="26" pinfunction="SPKVDD_26" pintype="power_in"/>
+      <node ref="U17" pin="6" pinfunction="OUT_6" pintype="power_out"/>
+    </net>
+    <net code="23" name="/VBUS_RAW" class="Default">
+      <node ref="C105" pin="1" pintype="passive"/>
+      <node ref="U17" pin="1" pinfunction="IN_1" pintype="power_in"/>
+      <node ref="U17" pin="3" pinfunction="EN_3" pintype="input"/>
+      <node ref="USB2" pin="A4" pinfunction="VBUS_A4" pintype="power_out"/>
+      <node ref="USB2" pin="A9" pinfunction="VBUS_A9" pintype="passive"/>
+      <node ref="USB2" pin="B4" pinfunction="VBUS_B4" pintype="passive"/>
+      <node ref="USB2" pin="B9" pinfunction="VBUS_B9" pintype="passive"/>
+    </net>
+    <net code="24" name="/VDDCORE" class="Default">
+      <node ref="C101" pin="1" pintype="passive"/>
+      <node ref="U1" pin="29" pinfunction="VDDCORE_29" pintype="power_out"/>
+    </net>
+    <net code="25" name="GND" class="Default">
+      <node ref="C100" pin="2" pintype="passive"/>
+      <node ref="C101" pin="2" pintype="passive"/>
+      <node ref="C102" pin="2" pintype="passive"/>
+      <node ref="C103" pin="2" pintype="passive"/>
+      <node ref="C104" pin="2" pintype="passive"/>
+      <node ref="C105" pin="2" pintype="passive"/>
+      <node ref="C106" pin="2" pintype="passive"/>
+      <node ref="C107" pin="2" pintype="passive"/>
+      <node ref="C75" pin="2" pintype="passive"/>
+      <node ref="C76" pin="2" pintype="passive"/>
+      <node ref="C77" pin="2" pintype="passive"/>
+      <node ref="C78" pin="2" pintype="passive"/>
+      <node ref="C80" pin="2" pintype="passive"/>
+      <node ref="C83" pin="2" pintype="passive"/>
+      <node ref="C88" pin="2" pintype="passive"/>
+      <node ref="C89" pin="2" pintype="passive"/>
+      <node ref="C90" pin="2" pintype="passive"/>
+      <node ref="C91" pin="2" pintype="passive"/>
+      <node ref="C92" pin="1" pintype="passive"/>
+      <node ref="C93" pin="1" pintype="passive"/>
+      <node ref="C96" pin="2" pintype="passive"/>
+      <node ref="C97" pin="2" pintype="passive"/>
+      <node ref="C98" pin="2" pintype="passive"/>
+      <node ref="C99" pin="2" pintype="passive"/>
+      <node ref="CN2" pin="2" pinfunction="2_2" pintype="passive"/>
+      <node ref="D1" pin="2" pinfunction="A2_2" pintype="passive"/>
+      <node ref="D2" pin="2" pinfunction="A2_2" pintype="passive"/>
+      <node ref="J2" pin="4" pinfunction="Pin_4_4" pintype="passive"/>
+      <node ref="MIC1" pin="2" pinfunction="2_2" pintype="passive"/>
+      <node ref="R65" pin="2" pintype="passive"/>
+      <node ref="R66" pin="2" pintype="passive"/>
+      <node ref="R74" pin="2" pintype="passive"/>
+      <node ref="R78" pin="2" pintype="passive"/>
+      <node ref="U1" pin="10" pinfunction="GND_10" pintype="power_in"/>
+      <node ref="U1" pin="28" pinfunction="GND_28" pintype="passive"/>
+      <node ref="U15" pin="1" pinfunction="GND_1" pintype="power_in"/>
+      <node ref="U16" pin="12" pinfunction="DGND_12" pintype="power_in"/>
+      <node ref="U16" pin="15" pinfunction="CSB/GPIO1_15" pintype="input"/>
+      <node ref="U16" pin="18" pinfunction="MODE_18" pintype="input"/>
+      <node ref="U16" pin="24" pinfunction="SPKGND_24" pintype="power_in"/>
+      <node ref="U16" pin="28" pinfunction="AGND_28" pintype="power_in"/>
+      <node ref="U16" pin="33" pinfunction="EPAD_33" pintype="power_in"/>
+      <node ref="U17" pin="2" pinfunction="GND_2" pintype="power_in"/>
+      <node ref="USB2" pin="1" pinfunction="GND_/_SHIELD_1" pintype="passive"/>
+      <node ref="USB2" pin="2" pinfunction="GND_/_SHIELD_2" pintype="passive"/>
+      <node ref="USB2" pin="3" pinfunction="GND_/_SHIELD_3" pintype="passive"/>
+      <node ref="USB2" pin="4" pinfunction="GND_/_SHIELD_4" pintype="passive"/>
+      <node ref="USB2" pin="A1" pinfunction="GND_/_SHIELD_A1" pintype="power_out"/>
+      <node ref="USB2" pin="A12" pinfunction="GND_/_SHIELD_A12" pintype="passive"/>
+      <node ref="USB2" pin="B1" pinfunction="GND_/_SHIELD_B1" pintype="passive"/>
+      <node ref="USB2" pin="B12" pinfunction="GND_/_SHIELD_B12" pintype="passive"/>
+      <node ref="Y1" pin="2" pinfunction="GND_2" pintype="power_in"/>
+      <node ref="Y2" pin="2" pinfunction="GND_2" pintype="power_in"/>
+    </net>
+    <net code="26" name="Net-(C79-Pad2)" class="Default">
+      <node ref="C79" pin="2" pintype="passive"/>
+      <node ref="MIC1" pin="1" pinfunction="1_1" pintype="passive"/>
+      <node ref="R68" pin="2" pintype="passive"/>
+    </net>
+    <net code="27" name="Net-(C86-Pad2)" class="AUDIO_OUT">
+      <node ref="C86" pin="2" pintype="passive"/>
+      <node ref="CN2" pin="3" pinfunction="3_3" pintype="passive"/>
+    </net>
+    <net code="28" name="Net-(C87-Pad2)" class="AUDIO_OUT">
+      <node ref="C87" pin="2" pintype="passive"/>
+      <node ref="CN2" pin="4" pinfunction="4_4" pintype="passive"/>
+    </net>
+    <net code="29" name="Net-(D1-A1)" class="USB">
+      <node ref="D1" pin="1" pinfunction="A1_1" pintype="passive"/>
+      <node ref="R53" pin="1" pintype="passive"/>
+      <node ref="USB2" pin="A6" pinfunction="D+_A6" pintype="passive"/>
+      <node ref="USB2" pin="B6" pinfunction="D+_B6" pintype="passive"/>
+    </net>
+    <net code="30" name="Net-(D2-A1)" class="USB">
+      <node ref="D2" pin="1" pinfunction="A1_1" pintype="passive"/>
+      <node ref="R54" pin="1" pintype="passive"/>
+      <node ref="USB2" pin="A7" pinfunction="D-_A7" pintype="passive"/>
+      <node ref="USB2" pin="B7" pinfunction="D-_B7" pintype="passive"/>
+    </net>
+    <net code="31" name="Net-(U16-LOUT1)" class="Default">
+      <node ref="C87" pin="1" pintype="passive"/>
+      <node ref="U16" pin="30" pinfunction="LOUT1_30" pintype="output"/>
+    </net>
+    <net code="32" name="Net-(U16-LOUT2)" class="Default">
+      <node ref="SPK2" pin="2" pinfunction="2_2" pintype="passive"/>
+      <node ref="U16" pin="25" pinfunction="LOUT2_25" pintype="output"/>
+    </net>
+    <net code="33" name="Net-(U16-ROUT1)" class="Default">
+      <node ref="C86" pin="1" pintype="passive"/>
+      <node ref="U16" pin="29" pinfunction="ROUT1_29" pintype="output"/>
+    </net>
+    <net code="34" name="Net-(U16-ROUT2)" class="Default">
+      <node ref="SPK2" pin="1" pinfunction="1_1" pintype="passive"/>
+      <node ref="U16" pin="23" pinfunction="ROUT2_23" pintype="output"/>
+    </net>
+    <net code="35" name="Net-(U16-VMID)" class="Default">
+      <node ref="C83" pin="1" pintype="passive"/>
+      <node ref="U16" pin="27" pinfunction="VMID_27" pintype="output"/>
+    </net>
+    <net code="36" name="Net-(U17-ILIM)" class="Default">
+      <node ref="R78" pin="1" pintype="passive"/>
+      <node ref="U17" pin="5" pinfunction="ILIM_5" pintype="passive"/>
+    </net>
+    <net code="37" name="Net-(USB2-CC1)" class="Default">
+      <node ref="R65" pin="1" pintype="passive"/>
+      <node ref="USB2" pin="A5" pinfunction="CC1_A5" pintype="passive"/>
+    </net>
+    <net code="38" name="Net-(USB2-CC2)" class="Default">
+      <node ref="R66" pin="1" pintype="passive"/>
+      <node ref="USB2" pin="B5" pinfunction="CC2_B5" pintype="passive"/>
+    </net>
+    <net code="39" name="unconnected-(U1-PA00-Pad1)" class="Default">
+      <node ref="U1" pin="1" pinfunction="PA00_1" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="40" name="unconnected-(U1-PA01-Pad2)" class="Default">
+      <node ref="U1" pin="2" pinfunction="PA01_2" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="41" name="unconnected-(U1-PA02-Pad3)" class="Default">
+      <node ref="U1" pin="3" pinfunction="PA02_3" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="42" name="unconnected-(U1-PA03-Pad4)" class="Default">
+      <node ref="U1" pin="4" pinfunction="PA03_4" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="43" name="unconnected-(U1-PA04-Pad5)" class="Default">
+      <node ref="U1" pin="5" pinfunction="PA04_5" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="44" name="unconnected-(U1-PA05-Pad6)" class="Default">
+      <node ref="U1" pin="6" pinfunction="PA05_6" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="45" name="unconnected-(U1-PA06-Pad7)" class="Default">
+      <node ref="U1" pin="7" pinfunction="PA06_7" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="46" name="unconnected-(U1-PA09-Pad12)" class="Default">
+      <node ref="U1" pin="12" pinfunction="PA09_12" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="47" name="unconnected-(U1-PA15-Pad16)" class="Default">
+      <node ref="U1" pin="16" pinfunction="PA15_16" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="48" name="unconnected-(U1-PA16-Pad17)" class="Default">
+      <node ref="U1" pin="17" pinfunction="PA16_17" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="49" name="unconnected-(U1-PA17-Pad18)" class="Default">
+      <node ref="U1" pin="18" pinfunction="PA17_18" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="50" name="unconnected-(U1-PA19-Pad20)" class="Default">
+      <node ref="U1" pin="20" pinfunction="PA19_20" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="51" name="unconnected-(U1-PA27-Pad25)" class="Default">
+      <node ref="U1" pin="25" pinfunction="PA27_25" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="52" name="unconnected-(U1-PA28-Pad27)" class="Default">
+      <node ref="U1" pin="27" pinfunction="PA28_27" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="53" name="unconnected-(U16-AUXL-Pad19)" class="Default">
+      <node ref="U16" pin="19" pinfunction="AUXL_19" pintype="input+no_connect"/>
+    </net>
+    <net code="54" name="unconnected-(U16-AUXR-Pad20)" class="Default">
+      <node ref="U16" pin="20" pinfunction="AUXR_20" pintype="input+no_connect"/>
+    </net>
+    <net code="55" name="unconnected-(U16-L2/GPIO2-Pad3)" class="Default">
+      <node ref="U16" pin="3" pinfunction="L2/GPIO2_3" pintype="input+no_connect"/>
+    </net>
+    <net code="56" name="unconnected-(U16-OUT3-Pad22)" class="Default">
+      <node ref="U16" pin="22" pinfunction="OUT3_22" pintype="output+no_connect"/>
+    </net>
+    <net code="57" name="unconnected-(U16-OUT4-Pad21)" class="Default">
+      <node ref="U16" pin="21" pinfunction="OUT4_21" pintype="output+no_connect"/>
+    </net>
+    <net code="58" name="unconnected-(U16-R2/GPIO3-Pad6)" class="Default">
+      <node ref="U16" pin="6" pinfunction="R2/GPIO3_6" pintype="input+no_connect"/>
+    </net>
+    <net code="59" name="unconnected-(U16-RIN-Pad5)" class="Default">
+      <node ref="U16" pin="5" pinfunction="RIN_5" pintype="input+no_connect"/>
+    </net>
+    <net code="60" name="unconnected-(U16-RIP-Pad4)" class="Default">
+      <node ref="U16" pin="4" pinfunction="RIP_4" pintype="input+no_connect"/>
+    </net>
+    <net code="61" name="unconnected-(U17-~{FAULT}-Pad4)" class="Default">
+      <node ref="U17" pin="4" pinfunction="~{FAULT}_4" pintype="open_collector+no_connect"/>
+    </net>
+    <net code="62" name="unconnected-(USB2-SBU1-PadA8)" class="Default">
+      <node ref="USB2" pin="A8" pinfunction="SBU1_A8" pintype="passive+no_connect"/>
+    </net>
+    <net code="63" name="unconnected-(USB2-SBU2-PadB8)" class="Default">
+      <node ref="USB2" pin="B8" pinfunction="SBU2_B8" pintype="passive+no_connect"/>
+    </net>
+  </nets>
+</export>

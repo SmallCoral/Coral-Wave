@@ -1,0 +1,56 @@
+SEGGER J-Link Commander V9.82 (Compiled Sep 30 2026 12:54:00)
+DLL version V9.82, compiled Sep 30 2026 12:52:58
+
+J-Link Commander will now exit on Error
+
+J-Link Command File read successfully.
+Processing script file...
+J-Link>connect
+J-Link connection not established yet but required for command.
+Connecting to J-Link ...O.K.
+Firmware: J-Link V9 compiled Dec 13 2022 11:14:50
+Hardware version: V9.70
+J-Link uptime (since boot): N/A (Not supported by this model)
+S/N: 69730331
+License(s): RDI,FlashBP,FlashDL,JFlash,GDB
+VTref=3.287V
+Device "ATSAMD21E18A" selected.
+
+
+Connecting to target via SWD
+InitTarget() start
+InitTarget()
+InitTarget() end - Took 12.0ms
+Found SW-DP with ID 0x0BC11477
+DPv0 detected
+CoreSight SoC-400 or earlier
+Scanning AP map to find all available APs
+AP[1]: Stopped AP scan as end of AP map has been reached
+AP[0]: AHB-AP (IDR: 0x04770031, ADDR: 0x00000000)
+Iterating through AP map to find AHB-AP to use
+AP[0]: Core found
+AP[0]: AHB-AP ROM base: 0x41003000
+CPUID register: 0x410CC601. Implementer code: 0x41 (ARM)
+Found Cortex-M0 r0p1, Little endian.
+FPUnit: 4 code (BP) slots and 0 literal slots
+CoreSight components:
+ROMTbl[0] @ 41003000
+[0][0]: E00FF000 CID B105100D PID 000BB4C0 ROM Table
+ROMTbl[1] @ E00FF000
+[1][0]: E000E000 CID B105E00D PID 000BB008 SCS
+[1][1]: E0001000 CID B105E00D PID 000BB00A DWT
+[1][2]: E0002000 CID B105E00D PID 000BB00B FPB
+[0][1]: 41006000 CID B105900D PID 001BB932 MTB-M0+
+Memory zones:
+  Zone: "Default" Description: Default access mode
+Cortex-M0 identified.
+J-Link>mem32 0x41002018, 1
+41002018 = 1001030A 
+J-Link>mem32 0xE000ED00, 1
+E000ED00 = 410CC601 
+J-Link>mem32 0x00804000, 2
+00804000 = D8E0C7FF FFFFFC5D 
+J-Link>q
+
+Script processing completed.
+

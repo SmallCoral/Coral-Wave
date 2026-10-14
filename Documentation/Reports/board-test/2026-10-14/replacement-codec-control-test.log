@@ -1,0 +1,107 @@
+SEGGER J-Link Commander V9.82 (Compiled Sep 30 2026 12:54:00)
+DLL version V9.82, compiled Sep 30 2026 12:52:58
+
+J-Link Commander will now exit on Error
+
+J-Link Command File read successfully.
+Processing script file...
+J-Link>r
+J-Link connection not established yet but required for command.
+Connecting to J-Link ...O.K.
+Firmware: J-Link V9 compiled Dec 13 2022 11:14:50
+Hardware version: V9.70
+J-Link uptime (since boot): N/A (Not supported by this model)
+S/N: 69730331
+License(s): RDI,FlashBP,FlashDL,JFlash,GDB
+VTref=3.285V
+Target connection not established yet but required for command.
+Device "ATSAMD21E18A" selected.
+
+
+Connecting to target via SWD
+InitTarget() start
+InitTarget()
+InitTarget() end - Took 5.76ms
+Found SW-DP with ID 0x0BC11477
+DPv0 detected
+CoreSight SoC-400 or earlier
+Scanning AP map to find all available APs
+AP[1]: Stopped AP scan as end of AP map has been reached
+AP[0]: AHB-AP (IDR: 0x04770031, ADDR: 0x00000000)
+Iterating through AP map to find AHB-AP to use
+AP[0]: Core found
+AP[0]: AHB-AP ROM base: 0x41003000
+CPUID register: 0x410CC601. Implementer code: 0x41 (ARM)
+Found Cortex-M0 r0p1, Little endian.
+FPUnit: 4 code (BP) slots and 0 literal slots
+CoreSight components:
+ROMTbl[0] @ 41003000
+[0][0]: E00FF000 CID B105100D PID 000BB4C0 ROM Table
+ROMTbl[1] @ E00FF000
+[1][0]: E000E000 CID B105E00D PID 000BB008 SCS
+[1][1]: E0001000 CID B105E00D PID 000BB00A DWT
+[1][2]: E0002000 CID B105E00D PID 000BB00B FPB
+[0][1]: 41006000 CID B105900D PID 001BB932 MTB-M0+
+Memory zones:
+  Zone: "Default" Description: Default access mode
+Cortex-M0 identified.
+Reset delay: 0 ms
+ResetTarget() start
+ResetTarget() end - Took 13.9ms
+Device specific reset executed.
+J-Link>h
+PC = FFFFFFFE, CycleCnt = 00000000
+R0 = BFEEEB8E, R1 = DDDEF7EF, R2 = F7FFFFB9, R3 = 1EDFDFFF
+R4 = FFFFFFEF, R5 = FEFDDBFA, R6 = F1DFDFFB, R7 = F6FFFFFD
+R8 = EEFFFEF7, R9 = F9FFBFF7, R10= 7DDEF71A, R11= FD77BBFB
+R12= FFFFFF33
+SP(R13)= FFFFFFFC, MSP= FFFFFFFC, PSP= 6DEFFFFC, R14(LR) = FFFFFFF9
+XPSR = F1000000: APSR = NZCVq, EPSR = 01000000, IPSR = 000 (NoException)
+CFBP = 00000000, CONTROL = 00, FAULTMASK = 00, BASEPRI = 00, PRIMASK = 00
+FPU regs: FPU not enabled / not implemented on connected CPU.
+J-Link>loadbin "C:\Users\sc\Documents\Dev\Hardware\wm8978\firmware\wm8978-selftest\build\control-hardware-pll12.bin", 0x20000000
+'loadbin': Performing implicit reset & halt of MCU.
+ResetTarget() start
+ResetTarget() end - Took 7.13ms
+Device specific reset executed.
+Downloading file [C:\Users\sc\Documents\Dev\Hardware\wm8978\firmware\wm8978-selftest\build\control-hardware-pll12.bin]...
+O.K.
+J-Link>wreg MSP, 0x20008000
+MSP = 20008000
+J-Link>SetPC 0x2000035c
+J-Link>g
+Memory map 'after startup completion point' is active
+J-Link>sleep 2500
+Sleep(2500)
+J-Link>h
+PC = 20000B10, CycleCnt = 00000000
+R0 = 0000BB7F, R1 = 0086DBF4, R2 = 00000001, R3 = 20007000
+R4 = 60000000, R5 = 00C04000, R6 = 00000400, R7 = 20007000
+R8 = 00000000, R9 = 00000000, R10= 00400000, R11= 00000000
+R12= FFFF4480
+SP(R13)= 20007FD0, MSP= 20007FD0, PSP= 6DEFFFFC, R14(LR) = 20000155
+XPSR = 21000000: APSR = nzCvq, EPSR = 01000000, IPSR = 000 (NoException)
+CFBP = 00000001, CONTROL = 00, FAULTMASK = 00, BASEPRI = 00, PRIMASK = 01
+FPU regs: FPU not enabled / not implemented on connected CPU.
+J-Link>mem32 0x20007000, 0x20
+20007000 = 574D3837 00000002 00000007 00000000 
+20007010 = 1001030A 02DC6C00 00000003 00000007 
+20007020 = 00000023 FFFFFFFF 00000000 00000000 
+20007030 = 00000000 00000000 00000000 00000000 
+20007040 = 00000000 00000000 00000000 00000000 
+20007050 = 00000000 00000000 00000360 00000000 
+20007060 = 00000000 00000001 00000001 04000000 
+20007070 = 00000000 00000000 00000000 0000000F 
+J-Link>mem32 0x42001400, 0xC
+42001400 = 00200016 00000000 00000000 000000EB 
+42001410 = 00000000 00000000 00100000 00000000 
+42001420 = 00000000 00000034 00000000 00000000 
+J-Link>mem32 0x20007100, 0x4
+20007100 = 5931434B 000016BE 00001052 00001481 
+J-Link>savebin "C:\Users\sc\Documents\Dev\Hardware\wm8978\firmware\wm8978-selftest\build\control-hardware-pll12-20261014-212219-results.bin", 0x20007000, 0x80
+Opening binary file for writing... [C:\Users\sc\Documents\Dev\Hardware\wm8978\firmware\wm8978-selftest\build\control-hardware-pll12-20261014-212219-results.bin]
+Reading 128 bytes from addr 0x20007000 into file...O.K.
+J-Link>q
+
+Script processing completed.
+

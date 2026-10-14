@@ -1,0 +1,32 @@
+{
+  "Mode": "Control",
+  "Transport": "Hardware",
+  "Stage": 3,
+  "ErrorCode": 3,
+  "Error": "codec NACK",
+  "DeviceId": "0x1001030A",
+  "BusIdle": 3,
+  "LastAckMask": 0,
+  "SuccessfulWrites": 0,
+  "FailedRegister": "0x0",
+  "ApproximateLrclkHz": 0,
+  "BclkTransitionsObserved": 0,
+  "RxWords": 0,
+  "AdcMin": [
+    0,
+    0
+  ],
+  "AdcMax": [
+    0,
+    0
+  ],
+  "TxUnderruns": 0,
+  "RxOverruns": 0,
+  "DmaBlocks": 0,
+  "ElapsedMs": 92,
+  "Done": 1,
+  "AddressAckCount": 0,
+  "RespondingAddresses": [],
+  "GpioDriveCheck": 15,
+  "Log": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\wm8978\\firmware\\wm8978-selftest\\build\\control-hardware-20261014-205252.log"
+}

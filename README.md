@@ -1,31 +1,20 @@
-# WM8978 USB 声卡
+![Coral-Wave](Images/coral-wave.svg)
 
-基于 **ATSAMD21E18A** 和 **WM8978** 的 USB 音频硬件项目，目标支持 **48 kHz / 16-bit 全双工音频**，提供耳机播放、麦克风采集和扬声器输出。
+# Coral-Wave
 
-![PCB 3D 预览](./docs/images/pcb-3d-preview.png)
+一块用 ATSAMD21E18A 和 WM8978 做的 USB 声卡。硬件有耳机、麦克风和扬声器接口，工程用 KiCad 10 打开。
 
-## 硬件特点
+2026-10-14 实板已在 Windows 上识别为 **Coral-Wave**，播放和麦克风端点都能打开。48 kHz、16 位双向 USB 传输已通过测试。
 
-- USB-C 供电与通信，包含 ESD 保护、限流和 3.3 V 稳压。
-- SAMD21 与 WM8978 通过 I²S 传输音频，通过 I²C 配置 codec。
-- 独立的 12 MHz 主控时钟与 12.288 MHz 音频时钟。
-- 立体声耳机输出、驻极体麦克风输入、BTL 扬声器输出及 SWD 调试接口。
-- 提供 KiCad 原理图、PCB、自定义库和项目 3D 模型。
-
-## 打开工程
-
-安装 **KiCad 10** 及其标准符号、封装和 3D 模型库，然后打开 [WM8978.kicad_pro](pcb/WM8978.kicad_pro)。项目自定义库与模型使用相对路径。
-
-## 目录
+当前固件用于打通 USB。播放数据接收后丢弃，采集端发送零样本，USB 与 I²S 的连接还没接入。新换的 WM8978 已通过 I²C 写入测试，但实板 Y2 仍空缺，恢复 12.288 MHz 有源时钟后才能继续验证录放音。
 
 | 目录 | 内容 |
 | --- | --- |
-| [pcb/](pcb/) | KiCad 工程、原理图、PCB 与器件库 |
-| [scripts/](scripts/) | 原理图检查、PCB 同步与模型处理脚本 |
-| [reports/](reports/) | 设计复核记录与导出资料 |
+| [Documentation](Documentation/) | 主控与 WM8978 手册、实测记录 |
+| [Firmware](Firmware/) | USB 固件、预编译文件、芯片自检与测试工具 |
+| [Hardware](Hardware/Coral-Wave.kicad_pro) | KiCad 工程、器件库和 3D 模型 |
+| [Images](Images/) | 项目标识与 PCB 预览 |
 
-## 项目状态
+供电接板上 USB-C，下载接 J2 的 SWD。首次使用见 [固件说明](Firmware/README.md)，本次结果见 [USB 测试记录](Documentation/Reports/usb-audio/2026-10-14/review.md)。
 
-目前处于硬件验证阶段，USB 音频固件与实板测试尚未完成。
-
-[原理图预览](reports/project-snapshot/2026-09-23/WM8978.pdf) · [设计检查记录](reports/footprint-binding/2026-10-03/review.md) · [3D 模型说明](pcb/WM8978.3dshapes/README.md)
+![PCB 预览](Images/pcb-3d-preview.png)

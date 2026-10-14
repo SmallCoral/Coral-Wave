@@ -1,0 +1,38 @@
+{
+  "Date": "2026-10-14",
+  "Firmware": "Coral-Wave USB transport",
+  "Driver": {
+    "Service": "usbaudio",
+    "Provider": "Microsoft",
+    "Version": "10.0.26100.9457",
+    "ProblemCode": 0
+  },
+  "Host": {
+    "PlaybackDevice": "Coral-Wave Playback (Coral-Wave",
+    "CaptureDevice": "Coral-Wave Microphone (Coral-Wa",
+    "PlaybackBytes": 192000,
+    "CaptureBytes": 96000,
+    "CaptureIsSilence": false,
+    "CapturePeak": 1,
+    "CaptureNonzeroSamples": 11029,
+    "SampleRate": 48000,
+    "Bits": 16
+  },
+  "Device": {
+    "Magic": 1129271884,
+    "Version": 1,
+    "Stage": 3,
+    "Error": 0,
+    "Millis": 18441,
+    "Mounted": 1,
+    "MountCount": 1,
+    "PlaybackActive": 0,
+    "CaptureActive": 0,
+    "PlaybackBytes": 196032,
+    "CaptureBytes": 97824,
+    "ControlRequests": 27,
+    "CodecAck": 0,
+    "SuspendCount": 0
+  },
+  "Limitation": "Playback is discarded and capture sends zero samples. WM8978 I2S bridge and analog audio are not tested."
+}

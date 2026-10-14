@@ -1,0 +1,39 @@
+SEGGER J-Link Commander V9.82 (Compiled Sep 30 2026 12:54:00)
+DLL version V9.82, compiled Sep 30 2026 12:52:58
+
+J-Link Commander will now exit on Error
+
+J-Link Command File read successfully.
+Processing script file...
+J-Link>connect
+J-Link connection not established yet but required for command.
+Connecting to J-Link ...O.K.
+Firmware: J-Link V9 compiled Dec 13 2022 11:14:50
+Hardware version: V9.70
+J-Link uptime (since boot): N/A (Not supported by this model)
+S/N: 69730331
+License(s): RDI,FlashBP,FlashDL,JFlash,GDB
+VTref=3.285V
+Device "ATSAMD21E18A" selected.
+
+
+Connecting to target via SWD
+InitTarget() start
+InitTarget()
+Connect Under Reset
+Connect Under Reset
+InitTarget() end - Took 289ms
+Connect failed. Resetting via Reset pin and trying again.
+InitTarget() start
+InitTarget()
+Connect Under Reset
+Connect Under Reset
+InitTarget() end - Took 290ms
+
+****** Error: J-Link script file function InitTarget() returned with error code -1
+
+Error occurred: Could not connect to the target device.
+For troubleshooting steps visit: https://kb.segger.com/J-Link_Troubleshooting
+
+Script processing completed.
+

@@ -1,2 +1,6 @@
 # Preserve original CAD bytes and keep generated STEP entity lists out of diffs.
-pcb/WM8978.3dshapes/*.step -text -diff
+Hardware/WM8978.3dshapes/*.step -text -diff
+# Preserve upstream formatting in vendored code.
+Firmware/third_party/** -whitespace
+# Keep raw instrument output unchanged.
+Documentation/Reports/**/*.log -whitespace
