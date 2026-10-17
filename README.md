@@ -20,3 +20,9 @@ Y1 使用 12 MHz 有源时钟，Y2 使用 12.288 MHz 有源时钟。固件通过
 供电、音频和上位机通信均接板上 USB-C。首次给空白主控安装引导程序时，J-Link 接 J2 的 SWD。使用方法见 [固件与上位机说明](Firmware/README.md)，结果见 [上位机与 USB 升级实测](Documentation/Reports/control/2026-10-17/review.md)。
 
 ![PCB 预览](Images/pcb-3d-preview.png)
+
+## 实物照片
+
+<img src="Images/board-assembled-front.png" width="480" alt="Coral-Wave 整板实物">
+
+![SAMD21 与 WM8978 局部](Images/board-mcu-codec-closeup.png)
