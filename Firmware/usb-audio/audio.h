@@ -24,5 +24,8 @@ bool audio_init(void);
 void audio_task(void);
 void audio_stream(unsigned path, bool active);
 void audio_controls(unsigned path, const uint8_t *mute, const int16_t *volume);
+bool audio_codec_write(uint8_t reg, uint16_t value);
+uint16_t audio_codec_shadow(uint8_t reg);
+void audio_quiesce(void);
 void DMAC_Handler(void);
 #endif

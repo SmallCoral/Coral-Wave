@@ -5,6 +5,9 @@
 #include "sam.h"
 #include "tusb.h"
 #include "audio.h"
+#include "board.h"
+#include "protocol.h"
+#include "control.h"
 #if CORAL_USB_DEBUG
 #include <stdarg.h>
 #include <stdio.h>
@@ -61,53 +64,6 @@ void USB_Handler(void) { tud_int_handler(0); }
 uint32_t tusb_time_millis_api(void) { return ticks; }
 void tusb_time_delay_ms_api(uint32_t ms) {
   uint32_t start = ticks; while (ticks - start < ms) __NOP();
-}
-static void wait_gclk(void) {
-  uint32_t limit = 1000000;
-  while (GCLK->STATUS.bit.SYNCBUSY) if (--limit == 0) fail(1);
-}
-static void wait_sysctrl(uint32_t mask) {
-  uint32_t limit = 2000000;
-  while ((SYSCTRL->PCLKSR.reg & mask) != mask) if (--limit == 0) fail(2);
-}
-static void board_init(void) {
-  NVMCTRL->CTRLB.bit.RWS = 1;
-  SYSCTRL->OSC8M.bit.PRESC = 0;
-  GCLK->GENCTRL.reg = GCLK_GENCTRL_ID(0) | GCLK_GENCTRL_SRC_OSC8M | GCLK_GENCTRL_GENEN;
-  wait_gclk();
-  /* PA18 enables Y1 and Y2. Y1 12 MHz is the USB reference. */
-  PORT->Group[0].OUTSET.reg = 1u << 18;
-  PORT->Group[0].DIRSET.reg = 1u << 18;
-  for (volatile unsigned i = 0; i < 20000; ++i) __NOP();
-  SYSCTRL->XOSC.reg = SYSCTRL_XOSC_ENABLE | SYSCTRL_XOSC_GAIN_3 | SYSCTRL_XOSC_STARTUP(2);
-  wait_sysctrl(SYSCTRL_PCLKSR_XOSCRDY);
-  GCLK->GENDIV.reg = GCLK_GENDIV_ID(1) | GCLK_GENDIV_DIV(375);
-  wait_gclk();
-  GCLK->GENCTRL.reg = GCLK_GENCTRL_ID(1) | GCLK_GENCTRL_SRC_XOSC | GCLK_GENCTRL_GENEN;
-  wait_gclk();
-  GCLK->CLKCTRL.reg = GCLK_CLKCTRL_ID_DFLL48 | GCLK_CLKCTRL_GEN_GCLK1 | GCLK_CLKCTRL_CLKEN;
-  wait_gclk();
-  wait_sysctrl(SYSCTRL_PCLKSR_DFLLRDY);
-  SYSCTRL->DFLLCTRL.reg = SYSCTRL_DFLLCTRL_ENABLE;
-  wait_sysctrl(SYSCTRL_PCLKSR_DFLLRDY);
-  uint32_t coarse = (*(const uint32_t *)0x00806024 >> 26) & 63;
-  if (coarse == 63) coarse = 31;
-  SYSCTRL->DFLLVAL.reg = SYSCTRL_DFLLVAL_COARSE(coarse) | SYSCTRL_DFLLVAL_FINE(512);
-  wait_sysctrl(SYSCTRL_PCLKSR_DFLLRDY);
-  SYSCTRL->DFLLMUL.reg = SYSCTRL_DFLLMUL_MUL(1500) | SYSCTRL_DFLLMUL_CSTEP(31) | SYSCTRL_DFLLMUL_FSTEP(511);
-  wait_sysctrl(SYSCTRL_PCLKSR_DFLLRDY);
-  SYSCTRL->DFLLCTRL.reg = SYSCTRL_DFLLCTRL_ENABLE | SYSCTRL_DFLLCTRL_MODE | SYSCTRL_DFLLCTRL_WAITLOCK;
-  wait_sysctrl(SYSCTRL_PCLKSR_DFLLLCKC | SYSCTRL_PCLKSR_DFLLLCKF);
-  GCLK->GENCTRL.reg = GCLK_GENCTRL_ID(0) | GCLK_GENCTRL_SRC_DFLL48M | GCLK_GENCTRL_GENEN | GCLK_GENCTRL_IDC;
-  wait_gclk();
-  PM->AHBMASK.reg |= PM_AHBMASK_USB;
-  PM->APBBMASK.reg |= PM_APBBMASK_USB;
-  GCLK->CLKCTRL.reg = GCLK_CLKCTRL_ID_USB | GCLK_CLKCTRL_GEN_GCLK0 | GCLK_CLKCTRL_CLKEN;
-  wait_gclk();
-  PORT->Group[0].PMUX[12].reg = PORT_PMUX_PMUXE_G | PORT_PMUX_PMUXO_G;
-  PORT->Group[0].PINCFG[24].reg = PORT_PINCFG_PMUXEN;
-  PORT->Group[0].PINCFG[25].reg = PORT_PINCFG_PMUXEN;
-  SysTick_Config(48000);
 }
 
 void tud_mount_cb(void) { status->mounted = 1; ++status->mount_count; }
@@ -192,7 +148,7 @@ bool tud_audio_set_req_entity_cb(uint8_t rhport, const tusb_control_request_t *r
   }
   return false;
 }
-static void main_loop(void) { for (;;) { tud_task(); audio_task(); } }
+static void main_loop(void) { for (;;) { tud_task(); audio_task(); cw_hid_task(); control_task(); } }
 void Reset_Handler(void) {
   __disable_irq(); SCB->VTOR = (uint32_t)vectors;
   uint32_t *source = &_sidata;
@@ -203,6 +159,7 @@ void Reset_Handler(void) {
   board_init(); status->stage = 2;
   __enable_irq();
   if (!audio_init()) fail(status->error ? status->error : 6);
+  control_init();
   audio_controls(0, mute[0], volume[0]); audio_controls(1, mute[1], volume[1]);
   const tusb_rhport_init_t init = { .role = TUSB_ROLE_DEVICE, .speed = TUSB_SPEED_FULL };
   if (!tusb_init(0, &init)) fail(3);

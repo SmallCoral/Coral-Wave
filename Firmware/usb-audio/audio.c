@@ -25,6 +25,8 @@ static volatile uint32_t gain_q15[2][2] = {{32768, 32768}, {32768, 32768}};
 static volatile bool primed;
 static bool controls_dirty = true, dac_unmuted;
 static uint32_t feedback_avg = PLAY_TARGET << 8, feedback_ms;
+static uint16_t codec_shadow[58];
+static bool quiesced;
 
 static uint32_t cycles(void) {
   uint32_t a, b, value;
@@ -51,9 +53,16 @@ static bool codec_write(uint8_t reg, uint16_t value) {
   if (ok) { I2CM.DATA.reg = value & 255; ok = i2c_ack(); }
   I2CM.CTRLB.reg = SERCOM_I2CM_CTRLB_CMD(3);
   ok = i2c_sync() && ok;
-  if (ok) { ++status->codec_writes; status->codec_ack = 1; }
+  if (ok) { ++status->codec_writes; status->codec_ack = 1; if (reg<58) codec_shadow[reg]=value; }
   else { status->codec_ack = 0; status->failed_register = reg; }
   return ok;
+}
+bool audio_codec_write(uint8_t reg, uint16_t value) { return codec_write(reg,value); }
+uint16_t audio_codec_shadow(uint8_t reg) { return reg<58 ? codec_shadow[reg] : 0; }
+void audio_quiesce(void) {
+  quiesced=true;
+  codec_write(10,codec_shadow[10]|0x040);
+  NVIC_DisableIRQ(DMAC_IRQn);DMAC->CTRL.reg=0;I2S->CTRLA.reg=0;
 }
 static bool codec_init(void) {
   PM->APBCMASK.reg |= PM_APBCMASK_SERCOM3;
@@ -302,6 +311,7 @@ bool tud_audio_rx_done_isr(uint8_t rhport, uint16_t bytes, uint8_t function, uin
   return true;
 }
 void audio_task(void) {
+  if (quiesced) return;
   uint32_t frame[49];
   while (status->playback_active && tud_audio_available() >= 4) {
     uint32_t room = RING_FRAMES - (play_write - play_read);
@@ -341,7 +351,7 @@ void audio_task(void) {
   if (controls_dirty) {
     bool unmute = status->playback_active && (gain_q15[0][0] || gain_q15[0][1]);
     if (unmute != dac_unmuted) {
-      if (!codec_write(10, unmute ? 0 : 0x040)) status->error = 4;
+      if (!codec_write(10, (codec_shadow[10]&~0x040u) | (unmute ? 0 : 0x040))) status->error = 4;
       else dac_unmuted = unmute;
     }
     controls_dirty = false;

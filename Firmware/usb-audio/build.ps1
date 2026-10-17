@@ -17,14 +17,16 @@ $tinyusb = Join-Path $firmwareRoot 'third_party\tinyusb\src'
 $out = Join-Path $PSScriptRoot 'build'
 New-Item -ItemType Directory -Force $out | Out-Null
 $sourceFiles = @((Join-Path $PSScriptRoot 'main.c'), (Join-Path $PSScriptRoot 'usb_descriptors.c'),
-  (Join-Path $PSScriptRoot 'audio.c'),
+  (Join-Path $PSScriptRoot 'audio.c'), (Join-Path $PSScriptRoot 'control.c'),
+  (Join-Path $firmwareRoot 'common/board.c'), (Join-Path $firmwareRoot 'common/protocol.c'),
+  (Join-Path $firmwareRoot 'common/flash.c'), (Join-Path $tinyusb 'class/hid/hid_device.c'),
   (Join-Path $tinyusb 'tusb.c'), (Join-Path $tinyusb 'common\tusb_fifo.c'),
   (Join-Path $tinyusb 'device\usbd.c'), (Join-Path $tinyusb 'class\audio\audio_device.c'),
   (Join-Path $tinyusb 'portable\microchip\samd\dcd_samd.c'))
 $objects = @()
 $common = @('-mcpu=cortex-m0plus', '-mthumb', '-std=c11', '-Os', '-g3', '-Wall', '-Wextra',
   '-ffunction-sections', '-fdata-sections', '-D__SAMD21E18A__', "-DCORAL_USB_DEBUG=$UsbDebug", '-I', $PSScriptRoot,
-  '-I', $tinyusb, '-I', (Join-Path $firmwareRoot 'third_party\samd21\include'),
+  '-I', $tinyusb, '-I', (Join-Path $firmwareRoot 'common'), '-I', (Join-Path $firmwareRoot 'third_party\samd21\include'),
   '-I', (Join-Path $firmwareRoot 'third_party\cmsis'))
 foreach ($source in $sourceFiles) {
   $object = Join-Path $out (([IO.Path]::GetFileNameWithoutExtension($source)) + '.o')

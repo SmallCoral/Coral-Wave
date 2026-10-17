@@ -8,8 +8,8 @@
 static const tusb_desc_device_t device = {
   .bLength = sizeof(tusb_desc_device_t), .bDescriptorType = TUSB_DESC_DEVICE,
   .bcdUSB = 0x0200, .bDeviceClass = 0, .bDeviceSubClass = 0, .bDeviceProtocol = 0,
-  .bMaxPacketSize0 = 64, .idVendor = 0xCAFE, .idProduct = 0xC0A3,
-  .bcdDevice = 0x0201, .iManufacturer = 1, .iProduct = 2, .iSerialNumber = 3,
+  .bMaxPacketSize0 = 64, .idVendor = 0xCAFE, .idProduct = 0xC0A4,
+  .bcdDevice = 0x0300, .iManufacturer = 1, .iProduct = 2, .iSerialNumber = 3,
   .bNumConfigurations = 1
 };
 
@@ -20,10 +20,10 @@ static const tusb_desc_device_t device = {
   TUD_AUDIO10_DESC_TYPE_I_FORMAT_LEN(1) + TUD_AUDIO10_DESC_STD_AS_ISO_EP_LEN + \
   TUD_AUDIO10_DESC_CS_AS_ISO_EP_LEN)
 #define TOTAL_LEN (TUD_CONFIG_DESC_LEN + TUD_AUDIO10_DESC_STD_AC_LEN + \
-  TUD_AUDIO10_DESC_CS_AC_LEN(2) + AC_LEN + STREAM_LEN * 2 + TUD_AUDIO10_DESC_STD_AS_ISO_SYNC_EP_LEN)
+  TUD_AUDIO10_DESC_CS_AC_LEN(2) + AC_LEN + STREAM_LEN * 2 + TUD_AUDIO10_DESC_STD_AS_ISO_SYNC_EP_LEN + TUD_HID_DESC_LEN)
 
 static const uint8_t configuration[] = {
-  TUD_CONFIG_DESCRIPTOR(1, 3, 0, TOTAL_LEN, 0, 100),
+  TUD_CONFIG_DESCRIPTOR(1, 4, 0, TOTAL_LEN, 0, 100),
   TUD_AUDIO10_DESC_STD_AC(0, 0, 0),
   TUD_AUDIO10_DESC_CS_AC(0x0100, AC_LEN, 1, 2),
   TUD_AUDIO10_DESC_INPUT_TERM(1, AUDIO_TERM_TYPE_USB_STREAMING, 0, 2,
@@ -49,7 +49,8 @@ static const uint8_t configuration[] = {
   TUD_AUDIO10_DESC_TYPE_I_FORMAT(1, 2, 16, 48000),
   TUD_AUDIO10_DESC_STD_AS_ISO_EP(0x81, TUSB_XFER_ISOCHRONOUS | TUSB_ISO_EP_ATT_ASYNCHRONOUS,
     98, 1, 0),
-  TUD_AUDIO10_DESC_CS_AS_ISO_EP(AUDIO10_CS_AS_ISO_DATA_EP_ATT_SAMPLING_FRQ, 0, 0)
+  TUD_AUDIO10_DESC_CS_AS_ISO_EP(AUDIO10_CS_AS_ISO_DATA_EP_ATT_SAMPLING_FRQ, 0, 0),
+  TUD_HID_DESCRIPTOR(3, 6, HID_ITF_PROTOCOL_NONE, 29, 0x83, 8, 10)
 };
 TU_VERIFY_STATIC(sizeof(configuration) == TOTAL_LEN, "Configuration length mismatch");
 
@@ -62,7 +63,7 @@ const uint16_t *tud_descriptor_string_cb(uint8_t index, uint16_t langid) {
   static uint16_t descriptor[64];
   static char serial[33];
   const char *strings[] = { "", "SmallCoral", "Coral-Wave", serial,
-    "Coral-Wave Playback", "Coral-Wave Microphone" };
+    "Coral-Wave Playback", "Coral-Wave Microphone", "Coral-Wave Control" };
   if (index == 0) { descriptor[0] = (TUSB_DESC_STRING << 8) | 4; descriptor[1] = 0x0409; return descriptor; }
   if (index >= sizeof(strings) / sizeof(strings[0])) return NULL;
   if (index == 3 && serial[0] == 0) {

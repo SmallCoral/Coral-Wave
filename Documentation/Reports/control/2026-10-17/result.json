@@ -1,0 +1,72 @@
+{
+  "date": "2026-10-17",
+  "version": "3.0.0",
+  "usbUpdate": {
+    "mcpUsbFlash": {
+      "flashed": true,
+      "serial": "B051EE3F5154384152202020FF02272E",
+      "version": "3.0.0",
+      "flash_crc32": "702937F2"
+    },
+    "savedParametersPreserved": true,
+    "status": {
+      "serial": "B051EE3F5154384152202020FF02272E",
+      "mode": "audio",
+      "firmware": "3.0.0",
+      "mcu_did": "0x1001030A",
+      "sample_rate_hz": 48000,
+      "pcm_bits": 16,
+      "playback_channels": 2,
+      "capture_channels": 1,
+      "status": {
+        "uptime_ms": 2621,
+        "stage": 3,
+        "error": 0,
+        "wm8978_i2c_ack": true,
+        "lrclk_estimate_hz": 48006,
+        "playback_active": false,
+        "capture_active": false,
+        "playback_underflows": 0,
+        "dma_errors": 0,
+        "i2s_tx_underruns": 0,
+        "i2s_rx_overruns": 0,
+        "dac_peak_before_codec": 0,
+        "settings_known": true
+      }
+    }
+  },
+  "fullDuplex": {
+    "Seconds": 30,
+    "SampleRate": 48000,
+    "Bits": 16,
+    "PlaybackBytes": 5760000,
+    "CaptureBytes": 2880000,
+    "CaptureIsSilence": false,
+    "CapturePeak": 29938,
+    "CaptureRms": 889.5700362753282
+  },
+  "concurrentParameterTest": {
+    "passed": true,
+    "cycles": 24,
+    "restored": true,
+    "dmaErrors": 0,
+    "txUnderruns": 0,
+    "rxOverruns": 0,
+    "playbackUnderflows": 0
+  },
+  "ui": {
+    "passed": true,
+    "switches": 48,
+    "maxSwitchMs": 375,
+    "averageSwitchMs": 90.56,
+    "layoutSettled": true
+  },
+  "packageValidationTests": 10,
+  "mcpOfficialSdk": true,
+  "mcpTools": 10,
+  "interruptedTransferRecovery": true,
+  "actualPowerCutTested": false,
+  "snrThdMeasured": false,
+  "bootloaderBytes": 8528,
+  "bootProtectionKiB": 16
+}

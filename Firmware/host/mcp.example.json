@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "coral-wave": {
+      "command": "C:/Coral-Wave/Coral-Wave-CLI.exe",
+      "args": ["--mcp"]
+    }
+  }
+}

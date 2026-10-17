@@ -1,31 +1,38 @@
 {
-  "Name": "Coral-Wave",
-  "Firmware": "USB stereo playback and mono microphone",
-  "Date": "2026-10-17",
-  "Target": "ATSAMD21E18A + WM8978",
-  "UsbVid": "0xCAFE",
-  "UsbPid": "0xC0A3",
-  "UsbBcdDevice": "0x0201",
-  "SampleRate": 48000,
-  "Bits": 16,
-  "PlaybackChannels": 2,
-  "CaptureChannels": 1,
-  "HeadphoneAnalogGainDb": -18,
-  "MicrophonePgaDb": 18,
-  "MicrophoneBoostDb": 20,
-  "FlashAddress": "0x00000000",
-  "Toolchain": "Arm GNU 14.3.Rel1",
-  "TinyUSB": "0.21.0 with SAMD ISO hooks",
-  "Artifacts": [
-    {
-      "File": "Coral-Wave-USB.bin",
-      "Bytes": 16752,
-      "SHA256": "0cabab36e45c330c793850c370a250bfc366d957d4deed882cb45f3980a51bbb"
+  "version": "3.0.0",
+  "board": "Coral-Wave / ATSAMD21E18A + WM8978",
+  "application_address": "0x00004000",
+  "bootloader_bytes": 16384,
+  "usb_update": "Coral-Wave.cwfw",
+  "first_install": "Coral-Wave-First-Install.bin",
+  "files": {
+    "Coral-Wave-Bootloader.bin": {
+      "bytes": 8528,
+      "sha256": "29fe0c40829dc2b7baccc2f17f1b0492ed9c8aa78693f7590581a9dcd0fef44a"
     },
-    {
-      "File": "Coral-Wave-USB.hex",
-      "Bytes": 47162,
-      "SHA256": "c0a2de46a570812de5d5ad19750af90e965feefc920416291b2be19da9c6ef11"
+    "Coral-Wave-CLI.exe": {
+      "bytes": 175104,
+      "sha256": "d899f57495db9509d31eaae6a8ac156833bf2acb83b556787efc9fba4938083f"
+    },
+    "Coral-Wave-Control.exe": {
+      "bytes": 175104,
+      "sha256": "4847e303611cad172f7abdf91399c1b314bb761382320cf593693d5651f40da5"
+    },
+    "Coral-Wave-First-Install.bin": {
+      "bytes": 261376,
+      "sha256": "d61d10e4b7b84bc3c8369a94ad910102bc19a2fd2a0457f448962e90f34f0ef2"
+    },
+    "Coral-Wave-USB.bin": {
+      "bytes": 20392,
+      "sha256": "0b6377b61d0fadcf993dfb65137157ce6f43ca8c204ff0915438457f3aa577d7"
+    },
+    "Coral-Wave-USB.hex": {
+      "bytes": 57406,
+      "sha256": "cbab756dd372a3358bfe41dce90f6d126e4a00d21661bc10b2257dcf6cd1c6a0"
+    },
+    "Coral-Wave.cwfw": {
+      "bytes": 20456,
+      "sha256": "68c64cff1a9ed416475942acddef2661463d58a37007a88dab11ce43d8b0e23d"
     }
-  ]
+  }
 }

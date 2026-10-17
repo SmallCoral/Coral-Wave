@@ -7,3 +7,5 @@ Documentation/Reports/**/*.log -whitespace
 # Keep published firmware hashes independent of checkout line endings.
 Firmware/releases/*.bin -text -diff
 Firmware/releases/*.hex -text -diff
+Firmware/releases/*.exe -text -diff
+Firmware/releases/*.cwfw -text -diff
