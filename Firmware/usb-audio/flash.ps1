@@ -19,7 +19,7 @@ $script = Join-Path $out "flash-$stamp.jlink"
 $log = Join-Path $out "flash-$stamp.log"
 @('r', 'h', "savebin `"$backup`", 0x00000000, 0x40000",
   "loadbin `"$Binary`", 0x00000000", "verifybin `"$Binary`", 0x00000000", 'r', 'g', 'sleep 5000',
-  'mem32 0x20007000, 0xE', 'q') | Set-Content -Encoding ascii $script
+  'mem32 0x20007000, 0x2B', 'q') | Set-Content -Encoding ascii $script
 & $JLink -device ATSAMD21E18 -if SWD -speed 1000 -autoconnect 1 -ExitOnError 1 -CommanderScript $script | Tee-Object -FilePath $log
 if ($LASTEXITCODE -ne 0) { throw "Flash/verification failed. See $log" }
 Write-Output "Flash verified. Previous flash saved locally at $backup"

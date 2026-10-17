@@ -7,4 +7,4 @@
 
 PDF 保留原厂内容和版权信息，文件校验值见 [SHA256SUMS.txt](Datasheets/SHA256SUMS.txt)。
 
-[USB 测试](Reports/usb-audio/2026-10-14/review.md) 和 [WM8978 实板初检](Reports/board-test/2026-10-14/review.md) 记录了本板结果。其余 `Reports` 是此前设计检查的存档，旧文件中的路径和项目名保留当时的写法。
+最新结果见 [2026-10-17 录放音实测](Reports/audio/2026-10-17/review.md)。此前的 [USB 测试](Reports/usb-audio/2026-10-14/review.md) 和 [实板初检](Reports/board-test/2026-10-14/review.md) 保留作记录，旧文件中的路径和项目名沿用当时的写法。

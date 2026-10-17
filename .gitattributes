@@ -4,3 +4,6 @@ Hardware/WM8978.3dshapes/*.step -text -diff
 Firmware/third_party/** -whitespace
 # Keep raw instrument output unchanged.
 Documentation/Reports/**/*.log -whitespace
+# Keep published firmware hashes independent of checkout line endings.
+Firmware/releases/*.bin -text -diff
+Firmware/releases/*.hex -text -diff

@@ -17,6 +17,7 @@ $tinyusb = Join-Path $firmwareRoot 'third_party\tinyusb\src'
 $out = Join-Path $PSScriptRoot 'build'
 New-Item -ItemType Directory -Force $out | Out-Null
 $sourceFiles = @((Join-Path $PSScriptRoot 'main.c'), (Join-Path $PSScriptRoot 'usb_descriptors.c'),
+  (Join-Path $PSScriptRoot 'audio.c'),
   (Join-Path $tinyusb 'tusb.c'), (Join-Path $tinyusb 'common\tusb_fifo.c'),
   (Join-Path $tinyusb 'device\usbd.c'), (Join-Path $tinyusb 'class\audio\audio_device.c'),
   (Join-Path $tinyusb 'portable\microchip\samd\dcd_samd.c'))

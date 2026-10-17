@@ -1,10 +1,10 @@
 using System;
 using System.Diagnostics;
+using System.IO;
 using System.Runtime.InteropServices;
 using System.Threading;
 
-// A short full-duplex transport check using only the named Coral-Wave device.
-// This does not change the Windows default device or test the analog codec.
+// Full-duplex test using only the named Coral-Wave device. Default routing is unchanged.
 public static class CoralWaveUsbTest
 {
     [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode)]
@@ -45,6 +45,11 @@ public static class CoralWaveUsbTest
         public bool CaptureIsSilence;
         public int CapturePeak;
         public int CaptureNonzeroSamples;
+        public double CaptureRms;
+        public int[] PeaksPerSecond;
+        public double[] RmsPerSecond;
+        public string CaptureFile;
+        public int Seconds;
         public int SampleRate = 48000, Bits = 16;
     }
     [DllImport("winmm.dll")] static extern uint waveOutGetNumDevs();
@@ -73,9 +78,12 @@ public static class CoralWaveUsbTest
             bytesPerSecond = (uint)(48000 * channels * 2), blockAlign = (ushort)(channels * 2), bits = 16 };
     }
     static Header Read(IntPtr header) { return (Header)Marshal.PtrToStructure(header, typeof(Header)); }
-    public static Result Run() {
+    public static Result Run() { return Run(1, 2000, null, null); }
+    public static Result Run(int seconds, int amplitude, string capturePath, string playbackPath) {
+        if (seconds < 1 || seconds > 120 || amplitude < 0 || amplitude > 4000)
+            throw new ArgumentOutOfRangeException("Test length or amplitude is out of range.");
         uint outId = uint.MaxValue, inId = uint.MaxValue;
-        var result = new Result();
+        var result = new Result { Seconds = seconds };
         for (uint i = 0; i < waveOutGetNumDevs(); ++i) {
             OutCaps caps; Check(waveOutGetDevCapsW(new UIntPtr(i), out caps, (uint)Marshal.SizeOf(typeof(OutCaps))), "Output caps");
             if (caps.name.StartsWith("Coral-Wave", StringComparison.Ordinal)) { outId = i; result.PlaybackDevice = caps.name; break; }
@@ -93,15 +101,28 @@ public static class CoralWaveUsbTest
             var outFormat = Pcm(2); var inFormat = Pcm(1);
             Check(waveOutOpen(out output, outId, ref outFormat, IntPtr.Zero, IntPtr.Zero, 8), "Playback open");
             Check(waveInOpen(out input, inId, ref inFormat, IntPtr.Zero, IntPtr.Zero, 8), "Capture open");
-            byte[] pcm = new byte[192000];
-            for (int frame = 0; frame < 48000; ++frame) {
-                short sample = (short)(2000 * Math.Sin(2 * Math.PI * 440 * frame / 48000));
+            byte[] pcm = new byte[192000 * seconds];
+            for (int frame = 0; frame < 48000 * seconds; ++frame) {
+                // A short fade at both ends avoids a click in headphones.
+                double fade = Math.Min(1.0, Math.Min(frame, 48000 * seconds - 1 - frame) / 480.0);
+                short sample = (short)(amplitude * fade * Math.Sin(2 * Math.PI * 440 * frame / 48000));
                 for (int ch = 0; ch < 2; ++ch) {
                     pcm[frame * 4 + ch * 2] = (byte)sample;
                     pcm[frame * 4 + ch * 2 + 1] = (byte)(sample >> 8);
                 }
             }
-            byte[] captured = new byte[96000];
+            if (!String.IsNullOrEmpty(playbackPath)) {
+                byte[] wave = File.ReadAllBytes(playbackPath);
+                if (wave.Length != 44 + 96000 * seconds || BitConverter.ToUInt16(wave, 20) != 1 ||
+                    BitConverter.ToUInt16(wave, 22) != 1 || BitConverter.ToUInt32(wave, 24) != 48000 ||
+                    BitConverter.ToUInt16(wave, 34) != 16)
+                    throw new InvalidOperationException("Playback requires a mono 48 kHz/16-bit WAV written by this test.");
+                for (int frame = 0; frame < 48000 * seconds; ++frame) {
+                    pcm[frame * 4] = pcm[frame * 4 + 2] = wave[44 + frame * 2];
+                    pcm[frame * 4 + 1] = pcm[frame * 4 + 3] = wave[45 + frame * 2];
+                }
+            }
+            byte[] captured = new byte[96000 * seconds];
             for (int i = 0; i < captured.Length; ++i) captured[i] = 0x55;
             outData = Marshal.AllocHGlobal(pcm.Length); inData = Marshal.AllocHGlobal(captured.Length);
             Marshal.Copy(pcm, 0, outData, pcm.Length); Marshal.Copy(captured, 0, inData, captured.Length);
@@ -115,17 +136,36 @@ public static class CoralWaveUsbTest
             Check(waveOutWrite(output, outHeader, headerSize), "Playback write");
             var timer = Stopwatch.StartNew();
             while ((Read(outHeader).flags & 1) == 0 || (Read(inHeader).flags & 1) == 0) {
-                if (timer.ElapsedMilliseconds > 5000) throw new TimeoutException("USB audio buffers did not finish in 5 seconds. Output flags=" + Read(outHeader).flags + ", input flags=" + Read(inHeader).flags + ", input bytes=" + Read(inHeader).recorded);
+                if (timer.ElapsedMilliseconds > (seconds + 5) * 1000) throw new TimeoutException("USB audio buffers did not finish. Output flags=" + Read(outHeader).flags + ", input flags=" + Read(inHeader).flags + ", input bytes=" + Read(inHeader).recorded);
                 Thread.Sleep(10);
             }
             result.PlaybackBytes = (uint)pcm.Length; result.CaptureBytes = Read(inHeader).recorded;
             if (result.CaptureBytes != captured.Length) throw new InvalidOperationException("Short capture buffer.");
             Marshal.Copy(inData, captured, 0, captured.Length);
             result.CaptureIsSilence = Array.TrueForAll(captured, b => b == 0);
+            result.PeaksPerSecond = new int[seconds];
+            result.RmsPerSecond = new double[seconds];
+            double totalSquares = 0;
             for (int i = 0; i < captured.Length; i += 2) {
                 short sample = (short)(captured[i] | (captured[i + 1] << 8));
                 if (sample != 0) ++result.CaptureNonzeroSamples;
                 result.CapturePeak = Math.Max(result.CapturePeak, Math.Abs((int)sample));
+                int second = i / 96000;
+                result.PeaksPerSecond[second] = Math.Max(result.PeaksPerSecond[second], Math.Abs((int)sample));
+                result.RmsPerSecond[second] += (double)sample * sample;
+                totalSquares += (double)sample * sample;
+            }
+            result.CaptureRms = Math.Sqrt(totalSquares / (captured.Length / 2));
+            for (int i = 0; i < seconds; ++i) result.RmsPerSecond[i] = Math.Sqrt(result.RmsPerSecond[i] / 48000);
+            if (!String.IsNullOrEmpty(capturePath)) {
+                using (var writer = new BinaryWriter(File.Create(capturePath))) {
+                    writer.Write(System.Text.Encoding.ASCII.GetBytes("RIFF")); writer.Write(36 + captured.Length);
+                    writer.Write(System.Text.Encoding.ASCII.GetBytes("WAVEfmt ")); writer.Write(16);
+                    writer.Write((ushort)1); writer.Write((ushort)1); writer.Write(48000); writer.Write(96000);
+                    writer.Write((ushort)2); writer.Write((ushort)16);
+                    writer.Write(System.Text.Encoding.ASCII.GetBytes("data")); writer.Write(captured.Length); writer.Write(captured);
+                }
+                result.CaptureFile = Path.GetFullPath(capturePath);
             }
             return result;
         } finally {

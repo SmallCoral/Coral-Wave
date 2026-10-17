@@ -1,24 +1,31 @@
 {
   "Name": "Coral-Wave",
-  "Target": "ATSAMD21E18A",
-  "Feature": "USB UAC1 transport",
+  "Firmware": "USB stereo playback and mono microphone",
+  "Date": "2026-10-17",
+  "Target": "ATSAMD21E18A + WM8978",
+  "UsbVid": "0xCAFE",
+  "UsbPid": "0xC0A3",
+  "UsbBcdDevice": "0x0201",
   "SampleRate": 48000,
   "Bits": 16,
   "PlaybackChannels": 2,
   "CaptureChannels": 1,
+  "HeadphoneAnalogGainDb": -18,
+  "MicrophonePgaDb": 18,
+  "MicrophoneBoostDb": 20,
   "FlashAddress": "0x00000000",
   "Toolchain": "Arm GNU 14.3.Rel1",
   "TinyUSB": "0.21.0 with SAMD ISO hooks",
   "Artifacts": [
     {
       "File": "Coral-Wave-USB.bin",
-      "Bytes": 9980,
-      "SHA256": "b871f0eb5fcc254f98810fd8c8c6a3704b9b66c77fce057b068456677bba0330"
+      "Bytes": 16752,
+      "SHA256": "0cabab36e45c330c793850c370a250bfc366d957d4deed882cb45f3980a51bbb"
     },
     {
       "File": "Coral-Wave-USB.hex",
-      "Bytes": 28119,
-      "SHA256": "94e45b612c9fbced4c46230d562b91d6bf3029b4b4c53e66a21885db6dc19eb6"
+      "Bytes": 47162,
+      "SHA256": "c0a2de46a570812de5d5ad19750af90e965feefc920416291b2be19da9c6ef11"
     }
   ]
 }

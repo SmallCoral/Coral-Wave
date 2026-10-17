@@ -26,3 +26,5 @@ Firmware/selftest/deps/
 Thumbs.db
 *~
 __pycache__/
+# Local microphone recordings
+/mic-test.wav
