@@ -1,28 +1,63 @@
-<img src="Images/coral-logo.svg" width="96" alt="Coral-Wave">
-
 # Coral-Wave
 
-一块用 ATSAMD21E18A 和 WM8978 做的 USB 声卡。硬件有耳机、麦克风和扬声器接口，工程用 KiCad 10 打开。
+基于 ATSAMD21E18A 与 WM8978 的 USB 声卡，提供双声道播放、单声道麦克风采集和 Windows 调参工具。
 
-Windows [上位机](Firmware/releases/Coral-Wave-Control.exe) 已加入 USB 烧录、硬件调音、预设保存和 [MCP 接入](Documentation/MCP.md)。首次安装引导程序后，日常更新只需 USB。
+[使用与调音](docs/usage.md) · [编译与烧录](docs/firmware.md) · [硬件与引脚](docs/hardware.md) · [测试与限制](docs/testing.md)
 
-2026-10-17 实板录放音已通过测试。电脑播放能从耳机口听到左右声道，板载麦克风可以录到电脑，录音回放也已确认清楚。格式为 **48 kHz、16 位，双声道播放和单声道采集**。
+已有安装引导程序的板子时，用 USB-C 连接电脑，打开 [Coral-Wave-Control.exe](Firmware/releases/Coral-Wave-Control.exe)。
+Windows 运行环境与完整操作见[使用说明](docs/usage.md)。
+空白主控须先通过 SWD [安装引导程序](docs/firmware.md#首次通过-swd-安装)。
 
-Y1 使用 12 MHz 有源时钟，Y2 使用 12.288 MHz 有源时钟。固件通过 DMA 连接 USB 与 I²S，并用 USB 反馈补偿音频时钟的微小频差。Windows 可以直接调播放、麦克风的音量和静音。
+<img src="Images/board-assembled-front.png" width="300" alt="Coral-Wave 调试阶段整板实物">
+
+照片由用户于 2026-10-17 提供，拍摄时 Y2 尚未安装；同日后续录放音实测已补装 Y2。
+[局部照片与设计图](docs/hardware.md#实物与设计图)保留了调试阶段的外观，不能代替最终装配清单。
+
+## 已实现的功能
+
+- USB Audio Class 1.0，固定 **48 kHz、16 位**，双声道播放、单声道麦克风采集。
+- Windows 系统播放与录音音量、静音控制。
+- 上位机调节 WM8978 的五段 EQ、耳机及麦克风增益、高通、ALC、噪声门和限幅等参数。
+- JSON 预设导入导出、参数掉电保存，以及安装引导程序后的 USB 固件更新。
+- 本地 CLI 和 stdio MCP 接口，共用 USB 通信与固件包校验代码。
+
+耳机播放、麦克风采集和 USB 更新有 [2026-10-17 实板记录](docs/testing.md#已有实板证据)。
+SPK2 是预留的扬声器硬件接口，当前固件没有完整的 BTL 输出配置及实测记录。
+仓库没有 SNR、THD、最大输出功率等模拟性能实测数据。
+
+## 文档入口
+
+| 内容 | 文档 |
+| --- | --- |
+| USB、I²S、控制链路与双时钟结构 | [系统架构](docs/architecture.md) |
+| 关键器件、供电、SWD 和音频接口 | [硬件设计与引脚](docs/hardware.md) |
+| 开发环境、编译、首次安装、USB 更新与恢复 | [固件编译与烧录](docs/firmware.md) |
+| 播放、录音、调音、预设和 CLI | [使用方法](docs/usage.md) |
+| 可复现检查、历史实测、已知问题 | [测试记录与限制](docs/testing.md) |
+| AI 客户端接入与底层 HID 格式 | [MCP](Documentation/MCP.md)、[USB 控制协议](Documentation/USB-Protocol.md) |
+| 芯片数据手册 | [资料索引](Documentation/README.md) |
+
+完整导航及文档维护范围见 [docs/README.md](docs/README.md)。
+
+## 仓库结构
 
 | 目录 | 内容 |
 | --- | --- |
-| [Documentation](Documentation/) | 主控与 WM8978 手册、实测记录 |
-| [Firmware](Firmware/) | 上位机、MCP、USB 固件、预编译文件与测试工具 |
-| [Hardware](Hardware/Coral-Wave.kicad_pro) | KiCad 工程、器件库和 3D 模型 |
-| [Images](Images/) | 项目标识与 PCB 预览 |
+| [docs](docs/) | 面向当前工程的设计、开发与使用说明 |
+| [Documentation](Documentation/) | 数据手册、协议参考及按日期保存的检查证据 |
+| [Firmware](Firmware/) | 固件、引导程序、Windows 上位机、预编译文件和测试工具 |
+| [Hardware](Hardware/Coral-Wave.kicad_pro) | KiCad 10 工程、项目器件库与专用 3D 模型 |
+| [Images](Images/README.md) | 实物照、PCB 预览与项目图标的来源说明 |
 
-供电、音频和上位机通信均接板上 USB-C。首次给空白主控安装引导程序时，J-Link 接 J2 的 SWD。使用方法见 [固件与上位机说明](Firmware/README.md)，结果见 [上位机与 USB 升级实测](Documentation/Reports/control/2026-10-17/review.md)。
+## 参与修改
 
-![PCB 预览](Images/pcb-3d-preview.png)
+提交问题时附上固件版本、Windows 版本、复现步骤及 CLI 状态输出。
+修改固件前按[编译说明](docs/firmware.md)建立环境，修改后选择[对应测试](docs/testing.md)。
+修改硬件后重新导出当前网表并执行 ERC、拓扑检查和 DRC；已有录放音记录不构成新版本硬件的制造放行。
 
-## 实物照片
+## 许可证
 
-<img src="Images/board-assembled-front.png" width="480" alt="Coral-Wave 整板实物">
-
-![SAMD21 与 WM8978 局部](Images/board-mcu-codec-closeup.png)
+仓库目前没有项目级 `LICENSE` 文件，项目自有代码、硬件与文档的整体许可证尚未明确。
+本次文档整理不代为选择许可证。
+第三方依赖分别保留 [MIT 或 Apache-2.0 许可证](Firmware/third_party/README.md)，珊瑚 Logo 使用[独立 MIT 授权](Images/coral-logo.LICENSE)。
+这些授权的适用范围限于相应材料。

@@ -1,33 +1,26 @@
 # 固件与上位机
 
-日常使用直接打开 [Coral-Wave-Control.exe](releases/Coral-Wave-Control.exe)。板子接 USB-C 后可调音、导入导出预设，或选择 [Coral-Wave.cwfw](releases/Coral-Wave.cwfw) 更新固件。首次安装引导程序之后，烧录不需要 J-Link。
+本目录包含 Coral-Wave 固件、USB 引导程序、Windows 上位机和测试工具。
+预编译文件位于 [releases](releases/)，版本及文件校验见 [manifest.json](releases/manifest.json)。
 
-当前格式为 **48 kHz、16 位，双声道播放和单声道采集**。Windows 输出选择 Coral-Wave Playback，输入选择 Coral-Wave Microphone。耳机默认模拟增益为 -18 dB，首次播放从较低系统音量开始。
+## 开始使用
+
+- 已有板子：[播放、录音与调音](../docs/usage.md)。
+- 开发或安装：[编译、首次 SWD 安装与 USB 更新](../docs/firmware.md)。
+- AI 客户端：[MCP 接入](../Documentation/MCP.md)。
+- 复测与诊断：[测试说明](../docs/testing.md)、[早期 RAM 自检](selftest/README.md)。
+
+## 目录
 
 | 目录 | 内容 |
 | --- | --- |
-| [host](host/) | Windows 上位机、CLI、MCP 与接口测试 |
-| [usb-audio](usb-audio/) | 录放音和音频参数控制固件 |
-| [bootloader](bootloader/) | USB 恢复引导程序、首次安装工具 |
-| [common](common/) | USB 控制协议、时钟、Flash 写入 |
-| [releases](releases/) | EXE、USB 升级包、首次安装镜像和校验清单 |
-| [tools](tools/) | 打包、录放音测试、SWD 诊断工具 |
+| [host](host/README.md) | GUI、CLI、MCP 与接口测试 |
+| [usb-audio](usb-audio/) | USB 录放音、I²S/DMA 与 codec 参数控制 |
+| [bootloader](bootloader/) | USB 恢复引导程序、首次安装与保护工具 |
+| [common](common/) | 共享协议、时钟和 Flash 写入 |
+| [releases](releases/) | EXE、USB 升级包、首次安装镜像与校验清单 |
+| [tools](tools/) | 打包、录放音测试与 SWD 诊断工具 |
+| [third_party](third_party/README.md) | 已纳入仓库的依赖、授权和本地补丁说明 |
 
-上位机操作见 [使用说明](host/README.md)，AI 接入见 [MCP](../Documentation/MCP.md)。设备开发 VID 为 `0xCAFE`，应用 PID 为 `0xC0A4`，引导 PID 为 `0xC0B0`。正式产品需要获授权的标识。
-
-从源码编译需要 Arm GNU Toolchain、.NET Framework 的 C# 编译器和 Python 3。关闭已打开的发布版上位机后运行下面命令。工具路径不在默认位置时可传 `-Toolchain` 和 `-Python`。
-
-```powershell
-./Firmware/build.ps1 -Toolchain 'C:/path/to/arm-gnu/bin'
-```
-
-新焊的空白主控先接 USB 供电和 J-Link，运行一次下面的脚本。它会备份 Flash 和用户配置区，安装引导及应用，验证 USB 通信后保护前 16 KB。已经装过的板子使用上位机更新即可。
-
-```powershell
-./Firmware/bootloader/provision.ps1
-./Firmware/usb-audio/flash.ps1 -Firmware ./Firmware/releases/Coral-Wave.cwfw
-```
-
-`Coral-Wave-USB.bin` 和 HEX 均从 `0x4000` 开始，不能按旧固件写到地址零。`Coral-Wave-First-Install.bin` 仅供首次 SWD 安装。USB 升级会保留引导区和音频设置，失败后可重试或使用恢复烧录。
-
-Y1 为主控提供 12 MHz 参考，Y2 给 WM8978 提供 12.288 MHz MCLK。[selftest](selftest/README.md) 保留早期 RAM 自检，运行时会暂停 USB。依赖授权及本地补丁见 [third_party](third_party/README.md)。
+发布文件与烧录地址的区别由[烧录文件表](../docs/firmware.md#识别烧录文件)维护。
+不要将原始应用 BIN 当作从地址零写入的首次安装镜像。
